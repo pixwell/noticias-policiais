@@ -1,14 +1,10 @@
 $tamanho_base_da_fonte_em_px: 16; // Tamanho em PX
 $os: opensans, Arial, sans-serif;
-$osb: opensans_bold, Arial, sans-serif;
 $raio: 5;
 
 // ===== PASTAS 
 $img_dir: "../images/";
 $font_path: "../fonts/";
-
-// ===== Sprite icone
-$icon_sprite: url("#{$img_dir}icon_sprite.png");
 
 // ===== CORES - Do mais escuro para o mais claro
 $cinza1: #333;

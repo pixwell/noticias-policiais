@@ -1,9 +1,4 @@
 /* ====== TEXTO ====== */
-//.font-face(nome da familia, pasta, nome do arquivo);
-
-@include font-face(opensans, "#{$font_path}opensans_regular", subset-OpenSans);
-@include font-face(opensans_bold, "#{$font_path}opensans_bold", subset-OpenSans-Bold);
-
 body {
     font: normal normal 400 px2rem($tamanho_base_da_fonte_em_px)/150% $os;
     color: $cinza2;
