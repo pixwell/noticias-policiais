@@ -1,0 +1,8 @@
+/* ====== RESETS ====== */
+a{
+    @include transition;    
+    &:hover{ 
+        text-decoration: none;
+        color: inherit;
+    }
+}

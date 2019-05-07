@@ -1,0 +1,20 @@
+/* ====== ESPACAMENTOS ====== */
+.mt-20{@include rem(20, margin-top)}
+.mt-30{@include rem(30, margin-top)}
+.mt-50{@include rem(50, margin-top)}
+.mt-70{@include rem(70, margin-top)}
+
+.mb-20{@include rem(20, margin-bottom)}
+.mb-30{@include rem(30, margin-bottom)}
+.mb-50{@include rem(50, margin-bottom)}
+.mb-70{@include rem(70, margin-bottom)}
+
+.pt-20{@include rem(20, padding-top)}
+.pt-30{@include rem(30, padding-top)}
+.pt-50{@include rem(50, padding-top)}
+.pt-70{@include rem(70, padding-top)}
+
+.pb-20{@include rem(20, padding-bottom)}
+.pb-30{@include rem(30, padding-bottom)}
+.pb-50{@include rem(50, padding-bottom)}
+.pb-70{@include rem(70, padding-bottom)}

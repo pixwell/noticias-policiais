@@ -1,0 +1,22 @@
+$tamanho_base_da_fonte_em_px: 16; // Tamanho em PX
+$os: opensans, Arial, sans-serif;
+$osb: opensans_bold, Arial, sans-serif;
+$raio: 5;
+
+// ===== PASTAS 
+$img_dir: "../images/";
+$font_path: "../fonts/";
+
+// ===== Sprite icone
+$icon_sprite: url("#{$img_dir}icon_sprite.png");
+
+// ===== CORES - Do mais escuro para o mais claro
+$cinza1: #333;
+$cinza2: #7e7e7e;
+$cinza3: #999;
+$cinza4: #CCC;
+$cinza5: #E4E4E4;
+$cinza6: #F4F4F4;
+$cinza7: #f3f4f2;
+
+// ===== Cores do site

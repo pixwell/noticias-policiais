@@ -1,0 +1,552 @@
+// ======  FONT-FACE
+@mixin font-face($family, $dir, $font){
+    @font-face {
+        font-family: $family;
+        src: url("#{$dir}/#{$font}.eot");
+        src: url("#{$dir}/#{$font}.eot?#iefix") format('embedded-opentype'),
+             url("#{$dir}/#{$font}.woff2") format('woff2'),
+             url("#{$dir}/#{$font}.woff") format('woff'),
+             url("#{$dir}/#{$font}.ttf") format('truetype'),
+             url("#{$dir}/#{$font}.svg##{$family}") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+// ======  BORDER
+@mixin radius($curva: 5){
+   -webkit-border-radius: #{$curva}px;
+   -moz-border-radius: #{$curva}px;
+   border-radius: #{$curva}px;
+}
+
+@mixin radius-4($top-left, $top-right, $bottom-right, $bottom-left){    
+    -webkit-border-radius: #{$top-left}px #{$top-right}px #{$bottom-right}px  #{$bottom-left}px;
+    -moz-border-radius: #{$top-left}px #{$top-right}px #{$bottom-right}px  #{$bottom-left}px;
+    border-radius: #{$top-left}px #{$top-right}px #{$bottom-right}px  #{$bottom-left}px;
+}
+
+@mixin skew($skew: 10, $origin: 50% 50%){
+    -webkit-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+
+    -webkit-transform: skew(#{$skew}deg);
+    -moz-transform: skew(#{$skew}deg);
+    -o-transform: skew(#{$skew}deg);
+    transform: skew(#{$skew}deg);
+    -webkit-backface-visibility: hidden;
+}
+
+// ======  TRANSITION
+@mixin transition($property: all, $duration: 0.5s, $timing: ease-in-out){    
+    -webkit-transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+// ======  GRADIENTES
+@mixin gradiente-vertical($cor-inicial, $cor-final, $percent1: 0%, $percent2: 100%){
+    // Old browsers */
+    background: $cor-final;
+    // FF3.6+ */
+    background: -moz-linear-gradient(top, $cor-inicial $percent1, $cor-final $percent2);
+    // Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($percent1, $cor-inicial), color-stop($percent2, $cor-final)); 
+    // Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top, $cor-inicial $percent1,$cor-final $percent2); 
+    // Opera 11.10+ */
+    background: -o-linear-gradient(top, $cor-inicial $percent1,$cor-final $percent2); 
+    // IE10+ */
+    background: -ms-linear-gradient(top, $cor-inicial $percent1,$cor-final $percent2); 
+    // W3C */
+    background: linear-gradient(to bottom, $cor-inicial $percent1,$cor-final $percent2); 
+    // IE6-8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+    // IE8 */ 
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+}
+
+@mixin gradiente-horizontal($cor-inicial, $cor-final, $percent1: 0%, $percent2: 100%){
+    // Old browsers */
+    background: $cor-final;
+    // FF3.6+ */
+    background: -moz-linear-gradient(left, $cor-inicial $percent1, $cor-final $percent2);
+    // Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop($percent1, $cor-inicial), color-stop($percent2, $cor-final)); 
+    // Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(left, $cor-inicial $percent1,$cor-final $percent2); 
+    // Opera 11.10+ */
+    background: -o-linear-gradient(left, $cor-inicial $percent1,$cor-final $percent2); 
+    // IE10+ */
+    background: -ms-linear-gradient(left, $cor-inicial $percent1,$cor-final $percent2); 
+    // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right, $cor-inicial $percent1,$cor-final $percent2); 
+    // IE6-8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+    // IE8 */ 
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+}
+
+@mixin gradiente-radial($cor-inicial, $cor-final, $percent1: 0%, $percent2: 100%){
+    // Old browsers */
+    background-color: $cor-final;
+    // FF3.6+ */
+    background-image: -moz-radial-gradient(center, ellipse cover, $cor-inicial $percent1, $cor-final $percent2);
+    // Chrome,Safari4+ */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop($percent1, $cor-inicial), color-stop($percent2, $cor-final)); 
+    // Chrome10+,Safari5.1+ */
+    background-image: -webkit-radial-gradient(center, ellipse cover, $cor-inicial $percent1,$cor-final $percent2); 
+    // Opera 11.10+ */
+    background-image: -o-radial-gradient(center, ellipse cover, $cor-inicial $percent1,$cor-final $percent2); 
+    // IE10+ */
+    background-image: -ms-radial-gradient(center, ellipse cover, $cor-inicial $percent1,$cor-final $percent2); 
+    // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-image: radial-gradient(ellipse at center, $cor-inicial $percent1,$cor-final $percent2);
+    // IE6-8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+    // IE8 */ 
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1,startColorstr = #{$cor-inicial}, endColorstr = #{$cor-final});
+}
+
+@mixin gradiente-imagem($image, $corInicial: $cinza2, $corFinal: $cinza3, $repeat: no-repeat){
+    background-color: $corInicial; // fallback
+    background: url("#{$img_dir}$image") $repeat; // fallback
+    background: url("#{$img_dir}$image") $repeat, -moz-linear-gradient(top, $corInicial, $corFinal); // FF 3.6+
+    background: url("#{$img_dir}$image") $repeat, -webkit-gradient(linear, 0 0, 0 100%, from($corInicial), to($corFinal)); // Safari 4+, Chrome 2+
+    background: url("#{$img_dir}$image") $repeat, -webkit-linear-gradient(top, $corInicial, $corFinal); // Safari 5.1+, Chrome 10+
+    background: url("#{$img_dir}$image") $repeat, -o-linear-gradient(top, $corInicial, $corFinal); // Opera 11.10
+    background: url("#{$img_dir}$image") $repeat, linear-gradient(to bottom, $corInicial, $corFinal); // Standard, IE10
+}
+
+@mixin pontilhado($cor: $cinza, $transparencia: 50, $intensidade: 85){
+    background-image: -moz-linear-gradient(50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -moz-linear-gradient(-50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -moz-linear-gradient(50deg, transparent 85%, $azul1 85%), 
+        -moz-linear-gradient(-50deg, transparent 85%, $azul1 85%);
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.50, $azul1), color-stop(.50, transparent)), 
+        -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.50, $azul1), color-stop(.50, transparent)), 
+        -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.85, transparent), color-stop(.85, $azul1)), 
+        -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.85, transparent), color-stop(.85, $azul1));
+    background-image: -webkit-linear-gradient(50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -webkit-linear-gradient(-50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -webkit-linear-gradient(50deg, transparent 85%, $azul1 85%), 
+        -webkit-linear-gradient(-50deg, transparent 85%, $azul1 85%);
+    background-image: -o-linear-gradient(50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -o-linear-gradient(-50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        -o-linear-gradient(50deg, transparent 85%, $azul1 85%), 
+        -o-linear-gradient(-50deg, transparent 85%, $azul1 85%);
+    background-image: linear-gradient(50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        linear-gradient(-50deg, $azul1 #{$transparencia}'%', transparent #{$transparencia}'%'), 
+        linear-gradient(50deg, transparent 85%, $azul1 85%), 
+        linear-gradient(-50deg, transparent 85%, $azul1 85%);
+    -moz-background-size: 2px 2px;
+    background-size: 2px 2px;
+    -webkit-background-size: 2px 2.1px; /* override value for webkit */
+    background-position: 0 0, 1px 0, 1px -1px, 0px 1px;
+}
+
+@mixin border-gradiente-vertical($corInicial, $corFinal, $width: 5, $style: solid){
+    border-width: #{$width}px;
+    border-style: $style;
+    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from($corInicial), to($corFinal)) 1 100%;
+    -webkit-border-image: -webkit-linear-gradient($corInicial, $corFinal) 1 100%;
+    -moz-border-image: -moz-linear-gradient($corInicial, $corFinal) 1 100%;
+    -o-border-image: -o-linear-gradient($corInicial, $corFinal) 1 100%;
+    border-image: linear-gradient(to bottom, $corInicial, $corFinal) 1 100%;
+}
+
+// ======  UNIDADES
+@mixin em($px, $atributo: font-size){
+    #{$atributo}: #{$px/16}em;
+}
+@mixin rem($px, $atributo: font-size){
+    #{$atributo}: #{$px/16}rem;
+}
+@function px2rem($px){
+    @return #{$px/16}rem;
+}
+
+// ======  LISTAS
+@mixin ul-reset(){
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+@mixin ul-reset-sm(){
+    margin: 0;
+    list-style: none
+}
+
+@mixin ul-reset-sp(){
+    padding: 0;
+    list-style: none
+}
+
+@mixin lista-horizontal{
+    .lista-horizontal{
+        @include ul-reset;
+        display: flex; 
+        flex-wrap: wrap;
+
+        li{
+            margin-right: 10px;
+            &:last-child{margin-right: 0}
+        }//li
+    }//.lista-horizontal
+}
+
+//Icones no endereco
+@mixin lista-contatos($colorLink: $cinza2, $hoverLink: #FFF, $corIcone: $cinza2, $sizeIcone: 18px){
+    .contact-list{
+        @include ul-reset;
+        li{
+            a{
+                color: $colorLink;
+                &:hover{color: $hoverLink}
+            }
+
+            &:before{
+                font-family: "Font Awesome 5 Free";
+                float: left;
+                color: $corIcone;
+                font-size: $sizeIcone;
+                @include rem(10, margin-right);
+            }
+            //Torna o conteudo dentro da LI em block
+            .block{display: inline-block;}
+        }   
+
+        .endereco,
+        .horario,
+        .celular,
+        .whatsapp,
+        .telefone,
+        .telefone-square,
+        .email,
+        .email-square{margin-bottom: 10px}
+
+        .endereco:before{
+            content: "\f3c5";//map-marker-alt
+            @include rem(2, margin-left);
+        }
+        .horario:before{
+            content: "\f017";//clock
+            @include rem(2, margin-left);
+        }
+        .celular:before{
+            content: "\f3cd";//mobile-alt
+            @include rem(2, margin-left);
+        }
+        .whatsapp:before{
+            font-family: 'Font Awesome 5 Brands';
+            content: "\f232";//whatsapp
+            @include rem(2, margin-left);
+        }
+        .telefone:before{
+            content: "\f095";//phone
+            @include rem(2, margin-left);
+        }
+        .telefone-square:before{
+            content: "\f098";//phone-square
+        }
+        .email:before{
+            content: "\f0e0";//envelope
+        }
+        .email-square:before{
+            content: "\f0e0";//envelope
+        }
+    }//.lista-contatos
+}
+
+//icone check em cada item
+@mixin lista-check($fontSize: $tamanho_base_da_fonte_em_px, $iconSize: 18, $iconColor: $cinza2, $uppercase: false, $linkColor: $cinza2){
+    .lista-check{
+        @include ul-reset;    
+        li{
+            @include rem($fontSize);
+            font-family: $os;            
+            @if $uppercase == true {text-transform: uppercase;}
+            
+            a{
+                color: $linkColor;
+                &:hover{color: darken($linkColor, 15%)}
+            }
+            
+            &:before{
+                font-family: FontAwesome;
+                content: "\f00c";//.fa-check
+                float: left;
+                color: $iconColor;
+                @include rem($iconSize);
+                @include rem(8, margin-right);
+            }
+            
+            //Torna o conteudo dentro da LI em block
+            .block{display: inline-block;}
+        }//li
+    }//.lista-check
+}
+
+// ======  BOTOES
+//Botao com seta aparecendo no estado Hover
+@mixin btn-seta($fontFamily: $os, $fontCor: $cinza2, $fontSize: $tamanho_base_da_fonte_em_px, $uppercase: false, $corIcone: false, $backHover: false){    
+    font-family: #{$fontFamily}px;
+    font-size: #{$fontSize}px;
+    color: $fontCor;
+
+    @if $uppercase == true{
+        text-transform: uppercase;
+    }        
+
+    &:after{
+        opacity: 0;
+        font-family: FontAwesome;
+        content: "\f054";//.fa-chevron-right
+        @if $corIcone != false {color: $corIcone;}
+        font-size: #{$fontSize}px;
+        margin-left: -9px;
+        @include transition();
+    }
+
+    &:hover{
+        color: #FFF;
+        text-shadow: 2px 2px 1px rgba(#000, 0.3);
+        box-shadow: 2px 2px 2px rgba(#000, 0.3);        
+        @if $backHover != false {background: $backHover;}
+        
+        &:after{
+            opacity: 1;
+            margin-left: 9px;
+        }
+    }//hover
+}
+
+@mixin leia-mais($fontFamily: $os, $fontColor: $cinza2, $iconColor: $cinza2, $beforeAfter: after, $hoverColor: $cinza1){
+    display: inline-block;
+    margin-top: 10px;
+    font-family: $fontFamily;
+    color: $fontColor;
+    vertical-align: middle;
+
+    &:#{$beforeAfter}{
+        vertical-align: middle;
+        font-family: FontAwesome;
+        display: inline-block;
+        color: $iconColor;
+        font-size: 18px;
+        @if $beforeAfter == after{
+            margin-left: 10px;
+        } @else{
+            margin-right: 10px;
+        }        
+        content: "\f0da";//fa-map-marker
+        @include transition();
+    }
+    
+    &:hover{
+        &:#{$beforeAfter}{color: $hoverColor}
+        color: $hoverColor;
+        text-decoration: none;
+    }
+}
+
+
+@mixin btn-simples($bgColor: $cinza2, $fontColor: $cinza7, $fontFamily: $os, $fontSize: $tamanho_base_da_fonte_em_px, $uppercase: false){
+    background: $bgColor;
+    font-family: $fontFamily;
+    @include rem($fontSize);
+    color: $fontColor;
+    @if $uppercase == true {text-transform: uppercase}
+    box-shadow: 1px 1px 2px rgba(#000, 0.5);
+    @include transition;
+    
+    &:hover{
+        text-decoration: none;
+        box-shadow: 1px 1px 2px rgba(#000, 0.3);
+        color: lighten($fontColor, 30%); 
+        background: darken($bgColor, 10%);
+    }    
+}
+
+// ======  MENUS
+//Os estilos devem ser aplicados a uma UL: <ul class="menu-estilo1">
+
+//Menu com seta esquerda e background fade no Hover
+@mixin menu-estilo1($cor-link: #666, $cor-hover: #999, $cor-seta: #666, $back-hover: #FFF){  
+    @include ul-reset;
+
+    //Menu ativo
+    & > li.current-menu-item a{font-weight: bold}
+
+    //.menu-estilo1 li
+    li{
+        color: $cor-link;
+        //.menu-estilo1 li ul
+        ul{
+            @include ul-reset;
+            margin-top: 8px;
+            padding-left: 15px;
+        }
+        //.menu-estilo1 li a
+        a{
+            display: block;
+            padding: 8px;
+            color: $cor-link;
+            //.menu-estilo1 li a:before
+            &:before{
+                font-family: FontAwesome;
+                content: "\f04b";//.fa-play
+                color: $cor-seta;
+                font-size: 6px;
+                margin-right: -5px;
+                vertical-align: middle;
+                opacity: 0;
+                @include transition();
+            }                
+            //.menu-estilo1 li a:hover
+            &:hover{
+                color: $cor-hover;
+                background: rgba($back-hover, 0.1);
+                //.menu-estilo1 li a:hover:before
+                &:before{
+                   margin-right: 8px;
+                   opacity: 1;
+                }//before
+            }//hover
+
+        }//a            
+    }//li
+}
+
+@mixin menu-estilo2($cor-link: #666, $cor-hover: #999){
+    @include ul-reset;
+
+    //Menu ativo
+    & > li.current-menu-item a{font-weight: bold}
+
+    //.menu-estilo2 li
+    li{
+        color: $cor-link;
+        //.menu-estilo2 li a
+        a{
+            display: block;
+            padding: 5px 0;
+            color: $cor-link;
+
+            //.menu-estilo2 li a:hover
+            &:hover{
+                color: $cor-hover;
+            }//hover
+        }//a
+    }//li
+}
+
+//Menu padrao nos sidebars
+@mixin menu-sidebar($borderColor: #E8E8E8, $linkColor: $cinza2, $bgHover: $cinza6){
+    //nivel principal ====================
+    @include ul-reset;
+    & > li.current-menu-item a{font-weight: bold}
+    & > li{
+        border-bottom: 1px solid $borderColor;
+        padding: px2rem(10) px2rem(5);
+        @include transition;
+        &:hover{
+            background: $bgHover;
+            padding: px2rem(10) px2rem(5) px2rem(10) px2rem(8);
+        }
+        &:last-child{border: none}
+
+        a{
+            display: block;
+            color: $linkColor;            
+            &:hover{
+                color: darken($linkColor, 10%);
+                text-shadow: 1px 1px 1px rgba(#000, 0.3);
+            }//Hover
+        }//a
+        .post-date{
+            @include rem(10, margin-top);
+            display: block;
+        }
+    }//>li
+
+    //Subniveis ====================
+    ul{
+        @include ul-reset;
+        li{
+            a{@include rem(20, padding-left)}
+        }//li
+    }//ul
+}
+
+// ======  VARIADOS
+// Traco inferior nos titulos
+// Colocar dentro do estilo para cabecalho. Ex.: h2{@include traco-inferior-reto();}
+@mixin traco-inferior-reto($corTraco: $cinza2, $centralizado: false, $width: 65px, $height: 2px, $boxShadow: false, $margem-superior: 30px){
+    &:after{
+        content: '';
+        display: block;
+        width: $width;
+        height: $height;
+        background: $corTraco;
+        @if $centralizado {
+            margin: $margem-superior auto 0 auto;
+        } @else {
+            margin: $margem-superior 0 0 0;
+        }        
+        @if $boxShadow == true {box-shadow: 1px 1px 2px rgba(#000, 0.6);}
+    }//after
+}
+
+// PLACEHOLDER
+@mixin placeholder($color: $cinza2, $fontFamily: $os, $fontSize: 100%, $uppercase: false){
+    ::-webkit-input-placeholder {
+        color: $color;
+        font-size: $fontSize;
+        font-family: $fontFamily;
+        @if $uppercase == true {text-transform: uppercase;}
+    }
+    :-moz-placeholder { /* Firefox 18- */
+       color: $color; 
+       font-size: $fontSize;
+       font-family: $fontFamily;
+       @if $uppercase == true {text-transform: uppercase;}
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: $color;
+       font-size: $fontSize;
+       font-family: $fontFamily;
+       @if $uppercase == true {text-transform: uppercase;}
+    }
+    :-ms-input-placeholder {  
+       color: $color;  
+       font-size: $fontSize;
+       font-family: $fontFamily;
+       @if $uppercase == true {text-transform: uppercase;}
+    }
+}
+
+//SETA
+
+//A classe deve ser atribuida a uma div, exemplo:
+//CSS
+//.modulo-numerado-seta1{
+//    @include arrow-down($mod1, 15, true);
+//    margin-bottom: 15px;
+//}
+//HTML
+//<div class="modulo-numerado-seta1"></div>*/
+
+@mixin arrow-down($arrowColor: $cinza3, $arrowWidth: 8, $centered: false){
+    width: 1px;
+    border-top: #{$arrowWidth}px solid $arrowColor;
+    border-right: #{$arrowWidth + 4}px solid transparent;
+    border-bottom: #{$arrowWidth}px solid transparent;
+    border-left: #{$arrowWidth + 4}px solid transparent;
+    @if $centered{
+        margin-right: auto;
+        margin-left: auto;        
+    };
+}
