@@ -1,0 +1,22 @@
+{
+  "name": "Site",
+  "version": "1.0.0",
+  "description": "Pixwell Web Design",
+  "main": "index.php",
+  "keywords": [
+    "Web",
+    "Design",
+    "Programação",
+    "PHP"
+  ],
+    "author": "Marcia Silva - Web Developer",
+    "license": "Commercial",
+    "devDependencies": {
+        "grunt": "^1.0.2",
+        "grunt-browser-sync": "^2.2.0",
+        "grunt-contrib-cssmin": "^2.2.1",
+        "grunt-contrib-uglify": "^3.3.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-sass": "^2.1.0"
+    }
+}
