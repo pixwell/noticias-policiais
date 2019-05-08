@@ -17,7 +17,10 @@ class Router
     {
         //Separa os itens da URL
         $urlArray = explode('/', $this->url);
-        
+        //Se a URL tiver so a barra
+        $url = empty(array_filter($urlArray)) ? '/' : $this->url;
+        $routeFound = false;
+
         //Compara a URL com as rotas do sistema e substitui caso haja parametros
         foreach ($this->routes as $route) {
             $routeArray = explode('/', $this->routeFilter($route[0]));
@@ -32,23 +35,24 @@ class Router
                     $param[] = $urlArray[$i];
                 }
                 //Montar a URL novamente, agora com o parametro
-                $routeModified = implode('/', $routeArray);
+                $route[0] = implode('/', $routeArray);
             }
+            
             //Se a URL for igual à rota
-            if( $this->url == $routeModified ){
+            if( $url == $route[0] ){
                 $routeFound = true;
                 $controller = $route[1];
                 $action = $route[2];
                 break; //Sai do laco ao achar a rota
             }
         }
-
+        
         //Se a rota foi encontrada acima
         if( $routeFound ){
             //Instancia o objeto
             $objController = Container::dispatcher($controller);
             //Chama a action
-            $objController->{$action()};
+            $objController->$action();
         }
     }
     
