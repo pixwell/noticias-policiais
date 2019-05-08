@@ -6,4 +6,6 @@ return [
     ['/', 'NoticiasController@index'],
     ['/{cidade}', 'NoticiasController@category'],
     ['{cidade}/{slug}/', 'NoticiasController@singlePost'],
+    ['/noticia/{slug}/', 'NoticiasController@singlePost'],
+    ['/cidade/{id}/', 'NoticiasController@singlePost'],
 ];
