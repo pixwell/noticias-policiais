@@ -7,4 +7,9 @@ class NoticiaController
     {
         echo 'Hello world!';
     }
+
+    public function show($id)
+    {
+        echo "Show ID $id";
+    }
 }
