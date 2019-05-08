@@ -55,19 +55,39 @@ class Router
             //Chama a action e verifica se tem parametro
             switch ( count($param) ) {
                 case 1:
-                    $objController->$action($param[0]);                    
+                    $objController->$action( $param[0], $this->getRequest() );                    
                     break;                    
                 case 2:
-                    $objController->$action($param[0], $param[1]);
+                    $objController->$action( $param[0], $param[1], $this->getRequest() );
                     break;                    
                 case 3:
-                    $objController->$action($param[0], $param[1], $param[2]);
+                    $objController->$action( $param[0], $param[1], $param[2], $this->getRequest() );
                     break;                    
                 default:
-                    $objController->$action();
+                    $objController->$action( $this->getRequest() );
                     break;
             }
+        } else {
+            echo 'Página não encontrada. (#TODO: Desenvolver o tratamento para erro 404)';
         }
+    }
+
+    /**
+     * Retorna um objeto com os requests: POST e GET
+     *
+     * @return object
+     */
+    private function getRequest()
+    {
+        $obj = new \stdClass();
+        
+        $get = (object)$_GET;
+        $post = (object)$_POST;
+
+        $obj->get = $get;
+        $obj->post = $post;
+        
+        return $obj;
     }
     
     /**
