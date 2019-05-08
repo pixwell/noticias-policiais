@@ -20,6 +20,7 @@ class Router
         //Se a URL tiver so a barra
         $url = empty(array_filter($urlArray)) ? '/' : $this->url;
         $routeFound = false;
+        $param = [];
 
         //Compara a URL com as rotas do sistema e substitui caso haja parametros
         foreach ($this->routes as $route) {
@@ -49,13 +50,22 @@ class Router
         
         //Se a rota foi encontrada acima
         if( $routeFound ){
-            try {
-                //Instancia o objeto
-                $objController = Container::dispatcher($controller);
-                //Chama a action
-                $objController->$action();
-            } catch (Exception $e) {
-                echo $e->getMessage();
+            //Instancia o objeto
+            $objController = Container::dispatcher($controller);
+            //Chama a action e verifica se tem parametro
+            switch ( count($param) ) {
+                case 1:
+                    $objController->$action($param[0]);                    
+                    break;                    
+                case 2:
+                    $objController->$action($param[0], $param[1]);
+                    break;                    
+                case 3:
+                    $objController->$action($param[0], $param[1], $param[2]);
+                    break;                    
+                default:
+                    $objController->$action();
+                    break;
             }
         }
     }
