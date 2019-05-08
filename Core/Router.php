@@ -49,10 +49,14 @@ class Router
         
         //Se a rota foi encontrada acima
         if( $routeFound ){
-            //Instancia o objeto
-            $objController = Container::dispatcher($controller);
-            //Chama a action
-            $objController->$action();
+            try {
+                //Instancia o objeto
+                $objController = Container::dispatcher($controller);
+                //Chama a action
+                $objController->$action();
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
     }
     
