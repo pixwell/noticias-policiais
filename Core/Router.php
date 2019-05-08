@@ -15,16 +15,28 @@ class Router
 
     public function run()
     {
+        //Separa os itens da URL
         $urlArray = explode('/', $this->url);
-        echo 'URL: ';
-        print_r($urlArray);
-        echo '<hr>';
-
+        
+        //Compara a URL com as rotas do sistema e substitui caso haja parametros
         foreach ($this->routes as $route) {
-            echo 'Route: <br>';
-            print_r($route);
-            echo '<br>' . $this->routeFilter($route[0]);
-            echo '<hr>';
+            $routeArray = explode('/', $this->routeFilter($route[0]));
+
+            //Percorrendo cada item do $routeArray
+            for ($i = 0; $i < count($routeArray); $i++) {
+                //Se o item do $routeArray tiver '{' e tiver o mesmo tamanho de $urlArray
+                if( (count($routeArray) == count($urlArray)) &&  (strpos($routeArray[$i], '{') !== false)){
+                    //Substituindo o item {}
+                    $routeArray[$i] = $urlArray[$i];
+                }
+                //Montar a URL novamente, agora com o parametro
+                $routeModified = implode('/', $routeArray);
+            }
+            //Se a URL for igual à rota
+            if( $this->url == $routeModified ){
+                echo '<b>Rota Modificada: </b>' . $routeModified . '<br>';
+                echo '<b>Açoes: </b>' . $route[1] . '<hr>';
+            }
         }
     }
     
