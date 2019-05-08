@@ -36,11 +36,9 @@ class Router
             }
             //Se a URL for igual à rota
             if( $this->url == $routeModified ){
-                echo '<b>Rota Modificada: </b>' . $routeModified . '<br>';
-                echo '<b>Controller: </b>' . $route[1] . '<br>';
-                echo '<b>Action: </b>' . $route[2] . '<hr>';
-                echo '<b>Parametros: </b><br>';
-                echo '<pre>' . var_dump($param) . '</pre><hr>';
+                $controller = $route[1];
+                $action = $route[2];
+                echo '<b>Controller:</b> ' . $controller . ' <br><b>Action:</b> ' . $action;
                 break; //Sai do laco ao achar a rota
             }
         }
