@@ -38,7 +38,6 @@ class Router
             if( $this->url == $routeModified ){
                 $controller = $route[1];
                 $action = $route[2];
-                echo '<b>Controller:</b> ' . $controller . ' <br><b>Action:</b> ' . $action;
                 break; //Sai do laco ao achar a rota
             }
         }
