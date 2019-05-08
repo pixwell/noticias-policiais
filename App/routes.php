@@ -4,8 +4,7 @@
 return [
     //['rota', 'controller', 'action'],
     ['/', 'NoticiasController', 'index'],
-    ['/noticia/{id}/show', 'NoticiasController', 'singlePost'],
-    ['/cidade/{id}/', 'NoticiasController', 'singlePost'],
-    ['/{cidade}', 'NoticiasController', 'category'],
-    ['{cidade}/{slug}/', 'NoticiasController', 'singlePost'],
+    ['/noticia/{id}/show', 'NoticiasController', 'actionNoticias'],
+    ['/cidade/{id}/', 'CidadeController', 'actionCidade'],
+    ['/{slug}', 'slugController', 'actionSlug'],
 ];
