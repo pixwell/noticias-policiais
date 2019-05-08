@@ -36,10 +36,19 @@ class Router
             }
             //Se a URL for igual à rota
             if( $this->url == $routeModified ){
+                $routeFound = true;
                 $controller = $route[1];
                 $action = $route[2];
                 break; //Sai do laco ao achar a rota
             }
+        }
+
+        //Se a rota foi encontrada acima
+        if( $routeFound ){
+            //Instancia o objeto
+            $objController = Container::dispatcher($controller);
+            //Chama a action
+            $objController->{$action()};
         }
     }
     
