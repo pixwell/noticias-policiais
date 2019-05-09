@@ -4,8 +4,17 @@ namespace Core;
 
 abstract class BaseController
 {
+    /**
+     * Pasta de views
+     */
     private $viewPath = __DIR__ . '/../App/View/';
+    /**
+     * Arquivo com a marcacao HTML do cabecalho da view
+     */
     protected $head = __DIR__ . '/../App/View/code_head.php';
+    /**
+     * Arquivo com os scripts JS e fechamento do <body> e <html>
+     */
     protected $footer = __DIR__ . '/../App/View/code_footer.php';
 
     /**
@@ -30,6 +39,12 @@ abstract class BaseController
         }
     }
     
+    /**
+     * Inclusao do codigo no header da view
+     * Do <html> ate abertura do <body>
+     *
+     * @return void
+     */
     private function get_header()
     {
         if( file_exists($this->head) ){
@@ -39,6 +54,11 @@ abstract class BaseController
         }
     }
 
+    /**
+     * Inclusao dos scripts JS, fechamento das tags </body> e </html>
+     *
+     * @return void
+     */
     private function get_footer()
     {
         if( file_exists($this->footer) ){
