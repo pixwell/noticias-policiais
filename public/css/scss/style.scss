@@ -4,3 +4,22 @@
 @import 'components/_texto.scss';
 @import 'components/_classes-globais.scss';
 @import 'components/_resets.scss';
+
+/* ====== HEADER ====== */
+#header{
+    background: $cinza1;
+    
+    color: #FFF;
+    a{
+        color: $amarelo;
+        &:hover{
+            color: lighten($amarelo, 8%);
+        }
+    }
+
+    @media(min-width: 320px){}
+    @media(min-width: 576px){}
+    @media(min-width: 768px){}
+    @media(min-width: 992px){}
+    @media(min-width: 1200px){}
+}

@@ -1,0 +1,200 @@
+/* ====== ESPACAMENTOS ====== */
+.mt-20 {
+    margin-top: 1.25rem;
+}
+
+.mt-30 {
+    margin-top: 1.875rem;
+}
+
+.mt-50 {
+    margin-top: 3.125rem;
+}
+
+.mt-70 {
+    margin-top: 4.375rem;
+}
+
+.mb-20 {
+    margin-bottom: 1.25rem;
+}
+
+.mb-30 {
+    margin-bottom: 1.875rem;
+}
+
+.mb-50 {
+    margin-bottom: 3.125rem;
+}
+
+.mb-70 {
+    margin-bottom: 4.375rem;
+}
+
+.pt-20 {
+    padding-top: 1.25rem;
+}
+
+.pt-30 {
+    padding-top: 1.875rem;
+}
+
+.pt-50 {
+    padding-top: 3.125rem;
+}
+
+.pt-70 {
+    padding-top: 4.375rem;
+}
+
+.pb-20 {
+    padding-bottom: 1.25rem;
+}
+
+.pb-30 {
+    padding-bottom: 1.875rem;
+}
+
+.pb-50 {
+    padding-bottom: 3.125rem;
+}
+
+.pb-70 {
+    padding-bottom: 4.375rem;
+}
+
+/* ====== TEXTO ====== */
+body {
+    font: normal normal 400 1rem/150% "Oswald", sans-serif;
+    color: #7e7e7e;
+}
+
+/* ====== CLASSES GLOBAIS ====== */
+/* ====== RESETS ====== */
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+a {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+}
+
+/* ====== HEADER ====== */
+#header {
+    background: #333;
+    color: #FFF;
+}
+
+#header a {
+    color: #ffca47;
+}
+
+#header a:hover {
+    color: #ffd670;
+}
