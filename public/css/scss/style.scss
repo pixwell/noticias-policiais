@@ -11,6 +11,8 @@
     @include rem(20, padding-top);
     @include rem(20, padding-bottom);
     color: #FFF;
+    fill: $amarelo;//svg
+
     //Logo
     h1{
         text-transform: uppercase;
@@ -36,7 +38,17 @@
             }
         }
     }
-    svg{fill: $amarelo}
+
+    //botao toggle menu
+    #toggle-menu{
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        svg{
+            @include rem(20, width);
+            @include rem(20, height);
+        }
+    }
 
     @media(min-width: 320px){
         #main-menu{
