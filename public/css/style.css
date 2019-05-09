@@ -281,6 +281,22 @@ p {
     padding: 0.3125rem 0.625rem;
 }
 
+@media (min-width: 320px) {
+    #header #main-menu {
+        padding-top: 1.25rem;
+    }
+    #header .menu li {
+        border-bottom: 1px solid rgba(255, 202, 71, 0.1);
+    }
+    #header .menu li:last-child {
+        border: 0;
+    }
+    #header .menu li a {
+        display: block;
+        padding: 0.625rem 0.625rem;
+    }
+}
+
 @media (min-width: 992px) {
     #header > .container {
         display: flex;
@@ -293,9 +309,20 @@ p {
         width: 82%;
         display: flex;
         justify-content: flex-end;
+        padding-top: 0;
     }
     #header .menu {
         display: flex;
         flex-wrap: wrap;
+    }
+    #header .menu li {
+        border-bottom: 0;
+        border-right: 1px solid rgba(255, 202, 71, 0.1);
+    }
+    #header .menu li:last-child {
+        border: 0;
+    }
+    #header .menu li a {
+        padding: 0 0.9375rem;
     }
 }
