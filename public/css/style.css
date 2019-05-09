@@ -257,7 +257,6 @@ p {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: #FFF;
-    fill: #ffca47;
 }
 
 #header h1 {
@@ -290,6 +289,7 @@ p {
 }
 
 #header #toggle-menu svg {
+    fill: #ffca47;
     width: 1.25rem;
     height: 1.25rem;
 }
@@ -311,6 +311,9 @@ p {
 }
 
 @media (min-width: 992px) {
+    #header #toggle-menu {
+        display: none;
+    }
     #header > .container {
         display: flex;
         align-items: center;

@@ -3,6 +3,11 @@
 <header id="header">
     <div class="container">
         <h1><a href="/">Segurança</a></h1>
+
+        <div id="toggle-menu">
+            <a href="#"><svg><use href="#menu" /></svg></a>
+        </div>
+        
         <nav id="main-menu">
             <ul class="menu">
                 <li><a href="/porto-alegre">Porto Alegre</a></li>

@@ -11,7 +11,6 @@
     @include rem(20, padding-top);
     @include rem(20, padding-bottom);
     color: #FFF;
-    fill: $amarelo;//svg
 
     //Logo
     h1{
@@ -45,6 +44,7 @@
         top: 12px;
         right: 20px;
         svg{
+            fill: $amarelo;
             @include rem(20, width);
             @include rem(20, height);
         }
@@ -70,6 +70,8 @@
     @media(min-width: 576px){}
     @media(min-width: 768px){}
     @media(min-width: 992px){
+        #toggle-menu{display: none}
+        
         //Posicionamento dos containers internos
         & > .container{
             display: flex;
