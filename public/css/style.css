@@ -258,6 +258,11 @@ p {
     color: #FFF;
 }
 
+#header h1 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
 #header h1 a {
     display: block;
 }
@@ -274,4 +279,23 @@ p {
 #header .menu li a {
     display: block;
     padding: 0.3125rem 0.625rem;
+}
+
+@media (min-width: 992px) {
+    #header > .container {
+        display: flex;
+        align-items: center;
+    }
+    #header h1 {
+        width: 18%;
+    }
+    #header #main-menu {
+        width: 82%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #header .menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

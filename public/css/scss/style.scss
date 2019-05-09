@@ -10,14 +10,16 @@
     background: #111;
     @include rem(20, padding-top);
     @include rem(20, padding-bottom);
-
+    color: #FFF;
+    //Logo
     h1{
+        text-transform: uppercase;
+        margin-bottom: 0;
         a{
             display: block;
         }
     }
-
-    color: #FFF;
+    //Links do cabecalho
     a{
         color: $amarelo;
         &:hover{
@@ -25,7 +27,7 @@
             text-shadow: 1px 1px 3px rgba($amarelo, 0.5);
         }
     }
-
+    //Itens do menu
     .menu{
         li{
             a{
@@ -38,6 +40,27 @@
     @media(min-width: 320px){}
     @media(min-width: 576px){}
     @media(min-width: 768px){}
-    @media(min-width: 992px){}
+    @media(min-width: 992px){
+        //Posicionamento dos containers internos
+        & > .container{
+            display: flex;
+            align-items: center;
+        }  
+
+        h1{width: 18%}
+
+        //Posicionamento do menu
+        #main-menu{
+            width: 82%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        //Posicionamento dos itens do menu
+        .menu{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
     @media(min-width: 1200px){}
 }
