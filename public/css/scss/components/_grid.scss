@@ -1,18 +1,27 @@
 /* ====== CLASSES GLOBAIS ====== */
-
-.container{
+.container,
+.content,
+.sidebar{
     position: relative;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    
+}
+
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.container{
     @media(min-width: 576px){
         max-width: 540px;
     }
     @media(min-width: 768px){
+        display: flex;
         max-width: 720px;
     }
     @media(min-width: 992px){
@@ -26,14 +35,15 @@
 .content{
     @media(min-width: 320px){}
     @media(min-width: 576px){}
-    @media(min-width: 768px){}
+    @media(min-width: 768px){max-width: 80%}
     @media(min-width: 992px){}
     @media(min-width: 1200px){}
 }
+
 .sidebar{
     @media(min-width: 320px){}
     @media(min-width: 576px){}
-    @media(min-width: 768px){}
+    @media(min-width: 768px){max-width: 20%}
     @media(min-width: 992px){}
     @media(min-width: 1200px){}
 }
