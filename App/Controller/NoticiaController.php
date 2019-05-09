@@ -11,6 +11,6 @@ class NoticiaController
     public function show($id, $request)
     {
         echo "Show ID $id <br>";
-        print_r($request);
+        print_r($request->post);
     }
 }
