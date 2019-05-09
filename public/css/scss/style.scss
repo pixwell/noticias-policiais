@@ -8,6 +8,14 @@
 /* ====== HEADER ====== */
 #header{
     background: #111;
+    @include rem(20, padding-top);
+    @include rem(20, padding-bottom);
+
+    h1{
+        a{
+            display: block;
+        }
+    }
 
     color: #FFF;
     a{
