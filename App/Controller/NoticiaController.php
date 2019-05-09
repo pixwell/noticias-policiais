@@ -5,7 +5,7 @@ class NoticiaController
 {
     public function index()
     {
-        echo 'Hello world!';
+        include __DIR__ . '/../View/site/home.php'; 
     }
 
     public function show($id, $request)
