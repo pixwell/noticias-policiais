@@ -1,11 +1,13 @@
 <?php 
 namespace App\Controller;
 
-class NoticiaController
+use Core\BaseController;
+
+class NoticiaController extends BaseController
 {
     public function index()
     {
-        include __DIR__ . '/../View/site/home.php'; 
+        echo $this->view('site/home');
     }
 
     public function show($id, $request)
