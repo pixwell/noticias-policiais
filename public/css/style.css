@@ -282,6 +282,10 @@ p {
     padding: 0.3125rem 0.625rem;
 }
 
+#header svg {
+    fill: #ffca47;
+}
+
 @media (min-width: 320px) {
     #header #main-menu {
         padding-top: 1.25rem;
