@@ -1,14 +1,14 @@
 @import 'components/_variaveis.scss';
 @import 'components/_mixins.scss';
+@import 'components/_resets.scss';
 @import 'components/_espacamento.scss';
 @import 'components/_texto.scss';
 @import 'components/_classes-globais.scss';
-@import 'components/_resets.scss';
 
 /* ====== HEADER ====== */
 #header{
-    background: $cinza1;
-    
+    background: #111;
+
     color: #FFF;
     a{
         color: $amarelo;

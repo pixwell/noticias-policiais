@@ -1,75 +1,3 @@
-/* ====== ESPACAMENTOS ====== */
-.mt-20 {
-    margin-top: 1.25rem;
-}
-
-.mt-30 {
-    margin-top: 1.875rem;
-}
-
-.mt-50 {
-    margin-top: 3.125rem;
-}
-
-.mt-70 {
-    margin-top: 4.375rem;
-}
-
-.mb-20 {
-    margin-bottom: 1.25rem;
-}
-
-.mb-30 {
-    margin-bottom: 1.875rem;
-}
-
-.mb-50 {
-    margin-bottom: 3.125rem;
-}
-
-.mb-70 {
-    margin-bottom: 4.375rem;
-}
-
-.pt-20 {
-    padding-top: 1.25rem;
-}
-
-.pt-30 {
-    padding-top: 1.875rem;
-}
-
-.pt-50 {
-    padding-top: 3.125rem;
-}
-
-.pt-70 {
-    padding-top: 4.375rem;
-}
-
-.pb-20 {
-    padding-bottom: 1.25rem;
-}
-
-.pb-30 {
-    padding-bottom: 1.875rem;
-}
-
-.pb-50 {
-    padding-bottom: 3.125rem;
-}
-
-.pb-70 {
-    padding-bottom: 4.375rem;
-}
-
-/* ====== TEXTO ====== */
-body {
-    font: normal normal 400 1rem/150% "Oswald", sans-serif;
-    color: #7e7e7e;
-}
-
-/* ====== CLASSES GLOBAIS ====== */
 /* ====== RESETS ====== */
 /* 
 html5doctor.com Reset Stylesheet
@@ -185,9 +113,103 @@ a:hover {
     color: inherit;
 }
 
+/* ====== ESPACAMENTOS ====== */
+.mt-20 {
+    margin-top: 1.25rem;
+}
+
+.mt-30 {
+    margin-top: 1.875rem;
+}
+
+.mt-50 {
+    margin-top: 3.125rem;
+}
+
+.mt-70 {
+    margin-top: 4.375rem;
+}
+
+.mb-20 {
+    margin-bottom: 1.25rem;
+}
+
+.mb-30 {
+    margin-bottom: 1.875rem;
+}
+
+.mb-50 {
+    margin-bottom: 3.125rem;
+}
+
+.mb-70 {
+    margin-bottom: 4.375rem;
+}
+
+.pt-20 {
+    padding-top: 1.25rem;
+}
+
+.pt-30 {
+    padding-top: 1.875rem;
+}
+
+.pt-50 {
+    padding-top: 3.125rem;
+}
+
+.pt-70 {
+    padding-top: 4.375rem;
+}
+
+.pb-20 {
+    padding-bottom: 1.25rem;
+}
+
+.pb-30 {
+    padding-bottom: 1.875rem;
+}
+
+.pb-50 {
+    padding-bottom: 3.125rem;
+}
+
+.pb-70 {
+    padding-bottom: 4.375rem;
+}
+
+/* ====== TEXTO ====== */
+body {
+    font: normal normal 400 1rem/150% "Oswald", sans-serif;
+    color: #7e7e7e;
+}
+
+h2, h3 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h2 a, h3 a {
+    color: inherit;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+/* ====== CLASSES GLOBAIS ====== */
 /* ====== HEADER ====== */
 #header {
-    background: #333;
+    background: #111;
     color: #FFF;
 }
 

@@ -3,3 +3,14 @@ body {
     font: normal normal 400 px2rem($tamanho_base_da_fonte_em_px)/150% $os;
     color: $cinza2;
 }
+
+h2, h3{
+    font-family: $os;
+    font-weight: 700;
+    color: $cinza1;
+    a{color: inherit}
+}
+
+h2{@include rem(28)}
+h3{@include rem(24)}
+h4{@include rem(20)}
