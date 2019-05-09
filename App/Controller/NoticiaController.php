@@ -8,8 +8,9 @@ class NoticiaController
         echo 'Hello world!';
     }
 
-    public function show($id)
+    public function show($id, $request)
     {
-        echo "Show ID $id";
+        echo "Show ID $id <br>";
+        print_r($request);
     }
 }
