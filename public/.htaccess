@@ -1,10 +1,11 @@
-# ==============================
 # REWRITE
-# ==============================
+# Case 1: http://zenverse.net/capture-query-string-get-data-in-htaccess-rewrite/
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f 
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php?url=$1
+    RewriteCond %{QUERY_STRING} ^(.*)$
+    RewriteRule ^(.*)$ index.php?url=$1&%1
 </IfModule>
