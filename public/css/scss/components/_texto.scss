@@ -8,6 +8,8 @@ h1, h2, h3{
     font-family: $os;
     font-weight: 700;
     color: $cinza1;
+    line-height: 150%;
+    @include rem(20, margin-bottom);
     a{color: inherit}
 }
 
@@ -15,3 +17,7 @@ h1{@include rem(30)}
 h2{@include rem(28)}
 h3{@include rem(24)}
 h4{@include rem(20)}
+
+p{
+    @include rem(10, margin-bottom);
+}
