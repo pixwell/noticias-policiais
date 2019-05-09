@@ -267,5 +267,11 @@ p {
 }
 
 #header a:hover {
-    color: #ffd670;
+    color: #ffd97a;
+    text-shadow: 1px 1px 3px rgba(255, 202, 71, 0.5);
+}
+
+#header .menu li a {
+    display: block;
+    padding: 0.3125rem 0.625rem;
 }

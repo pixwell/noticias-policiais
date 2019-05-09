@@ -21,7 +21,17 @@
     a{
         color: $amarelo;
         &:hover{
-            color: lighten($amarelo, 8%);
+            color: lighten($amarelo, 10%);
+            text-shadow: 1px 1px 3px rgba($amarelo, 0.5);
+        }
+    }
+
+    .menu{
+        li{
+            a{
+               display: block;
+               padding: px2rem(5) px2rem(10);
+            }
         }
     }
 
