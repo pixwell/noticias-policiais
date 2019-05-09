@@ -19,10 +19,22 @@ abstract class BaseController
         $filePath = $this->viewPath . $file . '.php';
         if( file_exists($filePath) ){
             $variables ? extract($variables) : null;
+            $code_head = $this->get_header();
             include_once $filePath;
         } else {
             http_response_code(404);
             throw new \Exception("View não encontrada.");
+        }
+    }
+
+    private function get_header()
+    {
+        $headCode = __DIR__ . '/../App/View/code_head.php';
+
+        if( file_exists($headCode) ){
+            return file_get_contents($headCode);
+        } else {
+            throw new \Exception("Arquivo View/code_head.php não encontrado.");
         }
     }
 }
