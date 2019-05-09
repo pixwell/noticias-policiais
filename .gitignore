@@ -5,4 +5,6 @@ nbproject/
 ubuntu-xenial-16.04-cloudimg-console.log
 access.log
 error.log
+/public/package-lock.json
+package-lock.json
 /vendor/
