@@ -184,14 +184,18 @@ body {
     color: #7e7e7e;
 }
 
-h2, h3 {
+h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     font-weight: 700;
     color: #333;
 }
 
-h2 a, h3 a {
+h1 a, h2 a, h3 a {
     color: inherit;
+}
+
+h1 {
+    font-size: 1.875rem;
 }
 
 h2 {

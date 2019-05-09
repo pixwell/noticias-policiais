@@ -4,13 +4,14 @@ body {
     color: $cinza2;
 }
 
-h2, h3{
+h1, h2, h3{
     font-family: $os;
     font-weight: 700;
     color: $cinza1;
     a{color: inherit}
 }
 
+h1{@include rem(30)}
 h2{@include rem(28)}
 h3{@include rem(24)}
 h4{@include rem(20)}
