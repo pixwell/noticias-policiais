@@ -5,6 +5,8 @@ namespace Core;
 abstract class BaseController
 {
     private $viewPath = __DIR__ . '/../App/View/';
+    protected $head = __DIR__ . '/../App/View/code_head.php';
+    protected $footer = __DIR__ . '/../App/View/code_footer.php';
 
     /**
      * Carrega as views
@@ -30,10 +32,8 @@ abstract class BaseController
     
     private function get_header()
     {
-        $headCode = __DIR__ . '/../App/View/code_head.php';
-
-        if( file_exists($headCode) ){
-            return file_get_contents($headCode);
+        if( file_exists($this->head) ){
+            return $this->head;
         } else {
             throw new \Exception("Arquivo View/code_head.php não encontrado.");
         }
@@ -41,10 +41,8 @@ abstract class BaseController
 
     private function get_footer()
     {
-        $footerCode = __DIR__ . '/../App/View/code_footer.php';
-
-        if( file_exists($footerCode) ){
-            return file_get_contents($footerCode);
+        if( file_exists($this->footer) ){
+            return $this->footer;
         } else {
             throw new \Exception("Arquivo View/code_footer.php não encontrado.");
         }
