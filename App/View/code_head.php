@@ -19,3 +19,4 @@
     </style>
 </head>
 <body>
+    <?php include __DIR__ . '/../../public/images/sprite-svg.svg' ?>
