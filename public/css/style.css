@@ -296,6 +296,7 @@ p {
 
 @media (min-width: 320px) {
     #header #main-menu {
+        display: none;
         padding-top: 1.25rem;
     }
     #header .menu li {
