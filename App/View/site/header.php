@@ -10,6 +10,7 @@
         
         <nav id="main-menu">
             <ul class="menu">
+                <li><a href="/">Home</a></li>
                 <li><a href="/cidade/porto-alegre">Porto Alegre</a></li>
                 <li><a href="/cidade/canoas">Canoas</a></li>
                 <li><a href="/cidade/alvorada">Alvorada</a></li>
