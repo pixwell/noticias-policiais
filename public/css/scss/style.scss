@@ -5,6 +5,16 @@
 @import 'components/_texto.scss';
 @import 'components/_grid.scss';
 
+/* ====== CLASSES GLOBAIS ====== */
+.btn-estilo1{
+    display: inline-block;
+    font-family: $os;
+    font-weight: 700;
+    color: #111;
+    background: $amarelo;
+    padding: px2rem(8) px2rem(20);
+    box-shadow: 1px 1px 2px rgba(#111, 0.3);
+}
 /* ====== HEADER ====== */
 #header{
     background: #111;
@@ -148,4 +158,19 @@
             }//.date
         }//.detals
     }//li
+}
+.widget{
+    border: 1px solid $cinza5;
+    @include rem(20, padding);
+    svg{
+        float: left;
+        fill: #111;
+        @include rem(24, width);
+        @include rem(34, height);
+        @include rem(10, margin-right);
+    }
+    h2,
+    h3{
+        @include rem(20)
+    }
 }

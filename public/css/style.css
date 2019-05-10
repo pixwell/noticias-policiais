@@ -1528,6 +1528,17 @@ html {
     }
 }
 
+/* ====== CLASSES GLOBAIS ====== */
+.btn-estilo1 {
+    display: inline-block;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    color: #111;
+    background: #ffca47;
+    padding: 0.5rem 1.25rem;
+    box-shadow: 1px 1px 2px rgba(17, 17, 17, 0.3);
+}
+
 /* ====== HEADER ====== */
 #header {
     background: #111;
@@ -1672,4 +1683,22 @@ html {
     display: inline-block;
     background: #ffca47;
     color: #946900;
+}
+
+.widget {
+    border: 1px solid #E4E4E4;
+    padding: 1.25rem;
+}
+
+.widget svg {
+    float: left;
+    fill: #111;
+    width: 1.5rem;
+    height: 2.125rem;
+    margin-right: 0.625rem;
+}
+
+.widget h2,
+.widget h3 {
+    font-size: 1.25rem;
 }
