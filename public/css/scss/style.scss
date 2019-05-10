@@ -165,8 +165,6 @@
     svg{
         float: left;
         fill: #111;
-        @include rem(24, width);
-        @include rem(34, height);
         @include rem(10, margin-right);
     }
     h2,

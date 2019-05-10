@@ -1693,8 +1693,6 @@ html {
 .widget svg {
     float: left;
     fill: #111;
-    width: 1.5rem;
-    height: 2.125rem;
     margin-right: 0.625rem;
 }
 
