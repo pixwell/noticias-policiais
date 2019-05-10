@@ -50,7 +50,7 @@ module.exports = function(grunt){
         
         /* ############## RELOAD DOS BROWSERS ############## */
         browserSync: {            
-            files: ["css/*.css", "js/*.js", "*.php", "views/*.php"],
+            files: ["css/*.css", "js/*.js", "*.php", "./App/View/site/*.php", "./App/View/admin/*.php"],
             options: {
                 watchTask: true,
                 background: true,
