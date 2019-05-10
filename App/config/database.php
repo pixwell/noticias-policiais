@@ -4,7 +4,7 @@ return [
     'driver' => 'mysql',
     'mysql' => [
         'host' => 'localhost',
-        'database' => 'noticias_policiais',
+        'dbname' => 'noticias_policiais',
         'user' => 'vagrant',
         'password' => 'vagrant',
         'charset' => 'utf8',
