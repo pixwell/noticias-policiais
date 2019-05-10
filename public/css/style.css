@@ -1544,6 +1544,10 @@ html {
     color: #473300;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* ====== HEADER ====== */
 #header {
     background: #111;
