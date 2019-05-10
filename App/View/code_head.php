@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo isset($metaTitle) ?: 'Noticias' ?></title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .box1{background: #c4e6ff}
