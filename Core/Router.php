@@ -68,7 +68,7 @@ class Router
                     break;
             }
         } else {
-            echo 'Página não encontrada. (#TODO: Desenvolver o tratamento para erro 404)';
+            Container::pageNotFound();
         }
     }
 

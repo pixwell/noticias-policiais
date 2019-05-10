@@ -25,11 +25,11 @@ class Container
 
     public static function pageNotFound()
     {
-        $file = __DIR__ . './App/View/404.php';
+        $file = __DIR__ . '/../App/View/site/404.php';
         if ( file_exists($file) ) {
             include_once $file;
         } else {
-            throw new \Exception('Arquivo View/404.php não existe');
+            throw new \Exception('Arquivo View/site/404.php não existe');
         }
     }
     
