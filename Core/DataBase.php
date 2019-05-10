@@ -24,7 +24,7 @@ class DataBase
                 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
                 return $conn;
             } catch (\PDOException $e) {
-                echo $e->getMessage();
+                throw new \Exception( $e->getMessage() );
             }
 
         }//if
