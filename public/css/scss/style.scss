@@ -104,3 +104,10 @@
     }
     @media(min-width: 1200px){}
 }
+/* ====== HOME ====== */
+.lista-noticias{
+    @include ul-reset;
+    li{
+        border-top: 1px solid red;
+    }
+}
