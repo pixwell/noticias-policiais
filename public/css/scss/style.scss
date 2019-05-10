@@ -107,6 +107,16 @@
 /* ====== HOME ====== */
 .lista-noticias{
     @include ul-reset;
+
+    h2, h3{
+        a{
+            &:hover{
+                color: darken($amarelo, 50%);
+                text-shadow: 1px 1px 1px rgba(#111, 0.3);
+            }
+        }
+    }
+
     li{
         position: relative;
         border-top: 1px solid $cinza5;
@@ -123,6 +133,7 @@
                 a{color: $amarelo}
                 margin-right: -5px;
                 line-height: 1;
+                box-shadow: 1px 1px 1px rgba(#111, 0.2);
             }
 
             .category{

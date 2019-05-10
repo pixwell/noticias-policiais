@@ -1632,6 +1632,11 @@ html {
     list-style: none;
 }
 
+.lista-noticias h2 a:hover, .lista-noticias h3 a:hover {
+    color: #473300;
+    text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.3);
+}
+
 .lista-noticias li {
     position: relative;
     border-top: 1px solid #E4E4E4;
@@ -1649,6 +1654,7 @@ html {
     padding: 0.25rem 0.625rem;
     margin-right: -5px;
     line-height: 1;
+    box-shadow: 1px 1px 1px rgba(17, 17, 17, 0.2);
 }
 
 .lista-noticias li .details .category a,
