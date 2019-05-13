@@ -24,6 +24,21 @@
     }
 }
 .text-center{text-align: center}
+.status-success{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.status-fail{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.status.processing{
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
 /* ====== HEADER ====== */
 #header{
     background: #111;
