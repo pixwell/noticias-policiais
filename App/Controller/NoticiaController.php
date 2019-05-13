@@ -2,9 +2,16 @@
 namespace App\Controller;
 
 use Core\BaseController;
+use App\Model\Category;
 
 class NoticiaController extends BaseController
 {
+    private $modelCategory;
+
+    public function __construct(){
+        $this->modelCategory = new Category;
+    }
+
     public function index()
     {
         $title = 'Título da página';
@@ -21,7 +28,8 @@ class NoticiaController extends BaseController
     public function create()
     {
         $title = 'Enviar ocorrência';
-        echo $this->view( 'site/form', compact('title') );
+        $cidades = $this->modelCategory->all();
+        echo $this->view( 'site/form', compact('title', 'cidades') );
     }
 
     public function store($request)
