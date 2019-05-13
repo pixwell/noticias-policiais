@@ -10,12 +10,17 @@ include 'header.php';
 
         <div class="row">
             <section class="col-lg-9">
-                
+                <h2>Registre sua ocorrência</h2>
+                <p>Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
+                <form id="form-registro" action="/noticia/store" method="post">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" name="nome" id="nome">
+                </form>
             </section>
         
             <!-- Sidebar  -->
             <aside class="col-lg-3 sidebar">
-                <?php include 'widget-ocorrencia.php' ?>
+                <p>#TODO widget com últimas notícias</p>
             </aside><!-- /Sidebar  -->
         </div>
     
