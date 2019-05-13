@@ -12,7 +12,7 @@ include 'header.php';
             <section class="col-lg-9 mb-30">
                 <h2>Registre sua ocorrência</h2>
                 <p class="mb-50">Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
-                <form id="form-registro" action="/noticia/store" method="post">
+                <form id="form-registro" action="/store-ocorrencia" method="post">
                     <label for="nome-ocorrencia">Seu Nome</label>
                     <input type="text" name="nome-ocorrencia" id="nome-ocorrencia">
 
