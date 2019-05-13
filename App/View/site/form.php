@@ -19,6 +19,8 @@ include 'header.php';
                     <label for="cidade-ocorrencia">Sua cidade</label>
                     <select name="cidade-ocorrencia" id="cidade-ocorrencia">
                         <option value="">Selecione ...</option>
+                        <option value="alvorada">Alvorada</option>
+                        <option value="alvorada">Alvorada</option>
                     </select>
 
                     <label for="titulo-ocorrencia">Título da ocorrência</label>
@@ -27,7 +29,7 @@ include 'header.php';
                     <label for="texto">Texto</label>
                     <textarea name="texto-ocorrencia" id="texto-ocorrencia" cols="30" rows="10"></textarea>
 
-                    <input type="submit" value="Enviar" class="btn-estilo1">
+                    <input type="submit" value="Enviar ocorrência" class="btn-estilo1">
                 </form>
             </section>
         
