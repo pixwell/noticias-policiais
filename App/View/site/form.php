@@ -20,7 +20,9 @@ include 'header.php';
                     <select name="cidade-ocorrencia" id="cidade-ocorrencia">
                         <option value="">Selecione ...</option>
                         <option value="alvorada">Alvorada</option>
-                        <option value="alvorada">Alvorada</option>
+                        <option value="cachoeirinha">Cachoeirinha</option>
+                        <option value="canoas">Canoas</option>
+                        <option value="porto-alegre">Porto Alegre</option>
                     </select>
 
                     <label for="titulo-ocorrencia">Título da ocorrência</label>
