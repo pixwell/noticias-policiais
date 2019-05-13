@@ -12,7 +12,6 @@ include 'header.php';
             <section class="col-lg-9 mb-30">
                 <h2>Registre sua ocorrência</h2>
                 <p class="mb-50">Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
-
                 <form id="form-registro">
                     <label for="nome-ocorrencia">Seu Nome</label>
                     <input type="text" name="author" id="nome-ocorrencia">
@@ -20,11 +19,9 @@ include 'header.php';
                     <label for="cidade-ocorrencia">Sua cidade</label>
                     <select name="categories_id" id="cidade-ocorrencia">
                         <option value="">Selecione ...</option>
-                        <option value="alvorada">Alvorada</option>
-                        <option value="cachoeirinha">Cachoeirinha</option>
-                        <option value="canoas">Canoas</option>
-                        <option value="gravatai">Gravataí</option>
-                        <option value="porto-alegre">Porto Alegre</option>
+                        <?php foreach ($cidades as $cidade) { ?>
+                            <option value="<?php echo $cidade->id ?>"><?php echo $cidade->title ?></option>
+                        <?php } ?>
                     </select>
 
                     <label for="titulo-ocorrencia">Título da ocorrência</label>
