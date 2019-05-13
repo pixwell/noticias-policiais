@@ -23,4 +23,9 @@ class NoticiaController extends BaseController
         $title = 'Enviar ocorrência';
         echo $this->view( 'site/form', compact('title') );
     }
+
+    public function store()
+    {
+        echo 'Gravando no BD';
+    }
 }
