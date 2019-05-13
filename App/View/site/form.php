@@ -23,6 +23,7 @@ include 'header.php';
                         <option value="alvorada">Alvorada</option>
                         <option value="cachoeirinha">Cachoeirinha</option>
                         <option value="canoas">Canoas</option>
+                        <option value="gravatai">Gravataí</option>
                         <option value="porto-alegre">Porto Alegre</option>
                     </select>
 
