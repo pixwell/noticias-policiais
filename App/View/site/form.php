@@ -12,8 +12,7 @@ include 'header.php';
             <section class="col-lg-9 mb-30">
                 <h2>Registre sua ocorrência</h2>
                 <p class="mb-50">Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
-                <div id="status-envio-ocorrencia"></div>
-                
+
                 <form id="form-registro">
                     <label for="nome-ocorrencia">Seu Nome</label>
                     <input type="text" name="nome-ocorrencia" id="nome-ocorrencia">
@@ -32,6 +31,8 @@ include 'header.php';
 
                     <label for="texto">Texto</label>
                     <textarea name="texto-ocorrencia" id="texto-ocorrencia" cols="30" rows="10"></textarea>
+
+                    <div id="status-envio-ocorrencia" class="mt-20 mb-20"></div>
 
                     <input type="submit" value="Enviar ocorrência" class="btn-estilo1">
                 </form>
