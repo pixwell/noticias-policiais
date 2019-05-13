@@ -1530,6 +1530,7 @@ html {
 
 /* ====== CLASSES GLOBAIS ====== */
 .btn-estilo1 {
+    border: none;
     display: inline-block;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
@@ -1537,6 +1538,11 @@ html {
     background: #ffca47;
     padding: 0.5rem 1.25rem;
     box-shadow: 1px 1px 2px rgba(17, 17, 17, 0.3);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .btn-estilo1:hover {
@@ -1708,4 +1714,25 @@ html {
 .widget h2,
 .widget h3 {
     font-size: 1.25rem;
+}
+
+/* ====== FORMULARIO ====== */
+#form-registro input:not([type="submit"]),
+#form-registro select,
+#form-registro textarea {
+    display: block;
+    border: 1px solid #E4E4E4;
+    margin-bottom: 0.9375rem;
+}
+
+#form-registro input:not([type="submit"]),
+#form-registro textarea {
+    width: 100%;
+}
+
+#form-registro label {
+    display: block;
+    margin-bottom: 0.3125rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
 }
