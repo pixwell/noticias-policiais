@@ -54,12 +54,12 @@ jQuery.noConflict();
                 beforeSend: function () {
                     $statusOcorrencia.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
-                success: function () {
-                    $statusOcorrencia.empty().hide().html('<p class="status-success">Registro criado com sucesso!</p>').slideDown();
+                success: function (response) {
+                    $statusOcorrencia.empty().hide().html('<p class="status-success">' + response + '</p>').slideDown();
                     $formRegistro.get(0).reset();
                 },
                 error: function (response) {
-                    $statusOcorrencia.empty().html('<p class="status-fail">Erro ao gravar registro.</p>');
+                    $statusOcorrencia.empty().html('<p class="status-fail">' + response + '</p>');
                 }
             }); //Ajax
         } else {
