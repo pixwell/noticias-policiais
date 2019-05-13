@@ -1723,6 +1723,10 @@ html {
     display: block;
     border: 1px solid #E4E4E4;
     margin-bottom: 0.9375rem;
+    color: #7e7e7e;
+    padding: 0.625rem 0.9375rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
 
 #form-registro input:not([type="submit"]),
