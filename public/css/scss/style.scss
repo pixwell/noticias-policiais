@@ -24,6 +24,13 @@
     }
 }
 .text-center{text-align: center}
+
+.status-success,
+.status-fail,
+.status-processing{
+    @include rem(15, padding);
+}
+
 .status-success{
     color: #155724;
     background-color: #d4edda;
@@ -34,7 +41,7 @@
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
-.status.processing{
+.status-processing{
     color: #383d41;
     background-color: #e2e3e5;
     border-color: #d6d8db;
