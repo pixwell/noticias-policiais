@@ -6,10 +6,10 @@ include 'header.php';
 ?>
 
 <main>
-    <div class="container pt-50 pb-30">
+    <div class="container pt-50">
 
         <div class="row">
-            <section class="col-lg-9">
+            <section class="col-lg-9 mb-30">
                 <h2>Registre sua ocorrência</h2>
                 <p class="mb-50">Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
                 <form id="form-registro" action="/noticia/store" method="post">
