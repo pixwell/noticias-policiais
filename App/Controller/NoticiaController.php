@@ -24,8 +24,8 @@ class NoticiaController extends BaseController
         echo $this->view( 'site/form', compact('title') );
     }
 
-    public function store()
+    public function store($request)
     {
-        echo 'Gravando no BD';
+        var_dump($request);
     }
 }
