@@ -17,4 +17,10 @@ class NoticiaController extends BaseController
         echo "Show ID $id <br>";
         print_r($request->post);
     }
+
+    public function create()
+    {
+        $title = 'Enviar ocorrência';
+        echo $this->view( 'site/form', compact('title') );
+    }
 }
