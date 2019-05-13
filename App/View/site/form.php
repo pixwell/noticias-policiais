@@ -11,10 +11,23 @@ include 'header.php';
         <div class="row">
             <section class="col-lg-9">
                 <h2>Registre sua ocorrência</h2>
-                <p>Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
+                <p class="mb-50">Conte-nos o que está acontecendo na sua cidade, no seu bairro, envie sua história.</p>
                 <form id="form-registro" action="/noticia/store" method="post">
-                    <label for="nome">Seu Nome</label>
-                    <input type="text" name="nome" id="nome">
+                    <label for="nome-ocorrencia">Seu Nome</label>
+                    <input type="text" name="nome-ocorrencia" id="nome-ocorrencia">
+
+                    <label for="cidade-ocorrencia">Sua cidade</label>
+                    <select name="cidade-ocorrencia" id="cidade-ocorrencia">
+                        <option value="">Selecione ...</option>
+                    </select>
+
+                    <label for="titulo-ocorrencia">Título da ocorrência</label>
+                    <input type="text" name="titulo-ocorrencia" id="titulo-ocorrencia">
+
+                    <label for="texto">Texto</label>
+                    <textarea name="texto-ocorrencia" id="texto-ocorrencia" cols="30" rows="10"></textarea>
+
+                    <input type="submit" value="Enviar" class="btn-estilo1">
                 </form>
             </section>
         
