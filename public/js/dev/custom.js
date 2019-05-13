@@ -36,13 +36,13 @@ jQuery.noConflict();
         };
 
         //Validacoes ==================
-        if( !$campos.nome ){
+        if( !$campos.author ){
             alerta($nome, 'Insira seu nome.');
-        } else if(!$campos.cidade){
+        } else if(!$campos.categories_id){
             alerta($cidade, 'Escolha a sua cidade.');
-        } else if(!$campos.titulo){
+        } else if(!$campos.title){
             alerta($titulo, 'Insira um título para a sua ocorrência.');
-        } else if(!$campos.texto){
+        } else if(!$campos.content){
             alerta($texto, 'Insira o texto da sua ocorrência.');
         }
 
