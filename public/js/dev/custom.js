@@ -29,10 +29,10 @@ jQuery.noConflict();
         event.preventDefault();
 
         var $campos = {
-            nome: $nome.val(),
-            cidade: $cidade.val(),
-            titulo: $titulo.val(),
-            texto: $texto.val()
+            author: $nome.val(),
+            categories_id: $cidade.val(),
+            title: $titulo.val(),
+            content: $texto.val()
         };
 
         //Validacoes ==================
