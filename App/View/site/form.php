@@ -15,10 +15,10 @@ include 'header.php';
 
                 <form id="form-registro">
                     <label for="nome-ocorrencia">Seu Nome</label>
-                    <input type="text" name="nome-ocorrencia" id="nome-ocorrencia">
+                    <input type="text" name="author" id="nome-ocorrencia">
 
                     <label for="cidade-ocorrencia">Sua cidade</label>
-                    <select name="cidade-ocorrencia" id="cidade-ocorrencia">
+                    <select name="categories_id" id="cidade-ocorrencia">
                         <option value="">Selecione ...</option>
                         <option value="alvorada">Alvorada</option>
                         <option value="cachoeirinha">Cachoeirinha</option>
@@ -27,10 +27,10 @@ include 'header.php';
                     </select>
 
                     <label for="titulo-ocorrencia">Título da ocorrência</label>
-                    <input type="text" name="titulo-ocorrencia" id="titulo-ocorrencia">
+                    <input type="text" name="title" id="titulo-ocorrencia">
 
                     <label for="texto">Texto</label>
-                    <textarea name="texto-ocorrencia" id="texto-ocorrencia" cols="30" rows="10"></textarea>
+                    <textarea name="content" id="texto-ocorrencia" cols="30" rows="10"></textarea>
 
                     <div id="status-envio-ocorrencia" class="mt-20 mb-20"></div>
 
