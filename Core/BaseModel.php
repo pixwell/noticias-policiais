@@ -12,4 +12,6 @@ abstract class BaseModel
         $this->pdo = $objPDO;
     }
     
+    public function create()
+    {}
 }
