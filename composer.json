@@ -1,7 +1,9 @@
 {
     "name": "pix/noticias",
     "description": "Site de notícias policiais da região.",
-    "require": {},
+    "require": {
+        "ausi/slug-generator": "^1.1"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "App/",
