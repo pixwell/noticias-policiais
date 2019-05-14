@@ -33,7 +33,8 @@ class NoticiaController extends BaseController
     {
         $title = 'Enviar ocorrência';
         $cidades = $this->modelCategory->all();
-        echo $this->view( 'site/form', compact('title', 'cidades') );
+        $noticias = $this->modelNoticia->all();
+        echo $this->view( 'site/form', compact('title', 'cidades', 'noticias') );
     }
 
     public function store($request)
