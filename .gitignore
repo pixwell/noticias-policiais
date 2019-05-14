@@ -7,4 +7,5 @@ access.log
 error.log
 /public/package-lock.json
 package-lock.json
+composer.lock
 /vendor/
