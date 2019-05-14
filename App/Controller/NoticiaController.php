@@ -18,9 +18,9 @@ class NoticiaController extends BaseController
 
     public function index()
     {
-        $title = 'Título da página';
-        $nome = 'Marcia';
-        echo $this->view( 'site/home', compact('title', 'nome') );
+        $title = 'Notícias Policiais';
+        $noticias = $this->modelNoticia->all();
+        echo $this->view( 'site/home', compact('title', 'noticias') );
     }
 
     public function show($id, $request)
@@ -32,9 +32,8 @@ class NoticiaController extends BaseController
     public function create()
     {
         $title = 'Enviar ocorrência';
-        $cidades = $this->modelCategory->all();
-        $noticias = $this->modelNoticia->all();
-        echo $this->view( 'site/form', compact('title', 'cidades', 'noticias') );
+        $cidades = $this->modelCategory->all();        
+        echo $this->view( 'site/form', compact('title', 'cidades') );
     }
 
     public function store($request)
