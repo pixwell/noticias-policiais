@@ -4,6 +4,7 @@ namespace App\Controller;
 use Core\BaseController;
 use App\Model\Category;
 use App\Model\Noticia;
+use Ausi\SlugGenerator\SlugGenerator;
 
 class NoticiaController extends BaseController
 {
@@ -37,7 +38,12 @@ class NoticiaController extends BaseController
 
     public function store($request)
     {
+        //campos do formulario
         $campos = $request->post;
+        //Gerador de slug
+        $slugGenerator = new SlugGenerator;        
+        $campos->slug = $slugGenerator->generate( strtolower($campos->title) );
+        
         if( !empty($campos->author) && !empty($campos->categories_id) && !empty($campos->title) && !empty($campos->content)){
             $gravar = $this->modelNoticia->insert($campos);
             if($gravar){
