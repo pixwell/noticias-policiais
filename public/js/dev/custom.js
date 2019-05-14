@@ -55,11 +55,11 @@ jQuery.noConflict();
                     $statusOcorrencia.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
                 success: function (response) {
-                    $statusOcorrencia.empty().hide().html('<p class="status-success">' + response + '</p>').slideDown();
+                    $statusOcorrencia.empty().hide().html(response).slideDown();
                     $formRegistro.get(0).reset();
                 },
                 error: function (response) {
-                    $statusOcorrencia.empty().html('<p class="status-fail">' + response + '</p>');
+                    $statusOcorrencia.empty().html(response);
                 }
             }); //Ajax
         } else {
