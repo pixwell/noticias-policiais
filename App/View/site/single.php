@@ -14,7 +14,7 @@ include 'header.php';
                     <?php foreach ($noticia as $page) { ?>
                     <div class="details">
                         <div class="category">
-                            <a href="<?php echo $categoryList[$page->categories_id]['route'] ?>"><?php echo $categoryList[$page->categories_id]['title'] ?></a>
+                            <a href="/cidade/<?php echo $categoryList[$page->categories_id]['slug'] ?>"><?php echo $categoryList[$page->categories_id]['title'] ?></a>
                         </div>
                         <div class="date"><?php echo date( 'd/m/Y' , strtotime( $page->created_at ) ); ?></div>
                     </div>

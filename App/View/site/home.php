@@ -17,7 +17,7 @@ include 'header.php';
                         <article>
                             <div class="details">
                                 <div class="category">
-                                    <a href="<?php echo $categoryList[$noticia->categories_id]['route'] ?>"><?php echo $categoryList[$noticia->categories_id]['title'] ?></a>
+                                    <a href="/cidade/<?php echo $categoryList[$noticia->categories_id]['slug'] ?>"><?php echo $categoryList[$noticia->categories_id]['title'] ?></a>
                                 </div>
                                 <div class="date"><?php echo date( 'd/m/Y' , strtotime( $noticia->created_at ) ); ?></div>
                             </div>
