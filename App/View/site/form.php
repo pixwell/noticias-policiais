@@ -38,15 +38,18 @@ include 'header.php';
         
             <!-- Sidebar  -->
             <aside class="col-lg-3 sidebar">
-                <h2>Últimos registros</h2>
+                <div class="widget">                    
+                    <h2 class="mb-30">Últimos registros</h2>
                 <?php 
                 if($ultimas){ 
                     foreach ($ultimas as $noticia) { ?>
-                <h3><a href="/<?php echo $noticia->slug ?>"><?php echo limita_texto($noticia->title, 30) ?></a></h3>                    
+                    <hr>
+                    <h3><a href="/<?php echo $noticia->slug ?>"><?php echo limita_texto($noticia->title, 50) ?></a></h3>                    
                 <?php 
                     }//foreach
                 }//if
                 ?>
+                </div>
             </aside><!-- /Sidebar  -->
         </div>
     
