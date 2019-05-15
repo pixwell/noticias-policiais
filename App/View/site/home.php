@@ -11,6 +11,7 @@ include 'header.php';
         <div class="row">
             <section class="col-lg-9">
                 <!-- Lista de noticias  -->
+                <?php if($noticias){ ?>
                 <ul class="lista-noticias">
                     <?php foreach ($noticias as $noticia) { ?>
                     <li>
@@ -27,8 +28,11 @@ include 'header.php';
                             </div>
                         </article>
                     </li>
-                    <?php } ?>                   
-                </ul><!-- /Lista de noticias  -->    
+                    <?php } ?>
+                </ul><!-- /Lista de noticias  -->
+                <?php } else { ?>
+                    <p>Nenhuma notícias encontrada.</p>
+                <?php } ?>
             </section>
         
             <!-- Sidebar  -->
