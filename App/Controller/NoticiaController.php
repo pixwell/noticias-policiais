@@ -21,7 +21,8 @@ class NoticiaController extends BaseController
         foreach ($list as $value) {
             $newList[$value->id] = [
                 'title' => $value->title, 
-                'route' => $value->route
+                'route' => $value->route,
+                'slug' => $value->slug
             ];
         }
         return $newList;
@@ -45,6 +46,15 @@ class NoticiaController extends BaseController
         $categoryList = $this->categoryList();
         
         echo $this->view( 'site/single', compact('title', 'noticia', 'categoryList') );
+    }
+    
+    public function category($slug)
+    {
+        //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];    
+        $categoria = $this->modelNoticia->findWhere(['slug', $slug]);        
+        $title = $categoria[0]->title;
+        
+        echo $this->view( 'site/category', compact('title', 'categoria') );
     }
 
     public function create()
