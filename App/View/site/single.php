@@ -11,14 +11,17 @@ include 'header.php';
         <div class="row">
             <section class="col-lg-9 lista-noticias" style="border-top: 1px solid #F4F4F4">
                 <article>
+                    <?php foreach ($noticia as $page) { ?>
                     <div class="details">
-                        <div class="category"><a href="#">Categoria</a></div>
-                        <div class="date">00/00/0000</div>
+                        <div class="category"><a href="<?php echo $page->route ?>"><?php echo $page->categories_id ?></a></div>
+                        <div class="date"><?php echo date( 'd/m/Y' , strtotime( $page->created_at ) ); ?></div>
                     </div>
                     <div class="text">
-                        <h2>Título da Notícia</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, dolor, atque quae eos blanditiis quasi mollitia at accusantium numquam laudantium omnis ipsa vel asperiores dolores voluptatibus in odio sint labore!</p>
+                        <h2><?php echo $page->title ?></h2>
+                        <p class="mb-50"><strong>Registrado por:</strong> <?php echo $page->author ?></p>
+                        <?php echo $page->content ?>
                     </div>
+                    <?php } ?>
                 </article>  
             </section>
         
