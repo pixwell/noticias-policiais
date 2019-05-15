@@ -25,7 +25,10 @@ class NoticiaController extends BaseController
 
     public function show($slug)
     {
-        $noticia = $this->modelNoticia->findWhere(['slug' => $slug]);
+        //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];
+        $query = ['slug', $slug];
+        
+        $noticia = $this->modelNoticia->findWhere($query);
         $title = 'Single Notícia';
         
         echo $this->view( 'site/single', compact('title', 'noticia') );
