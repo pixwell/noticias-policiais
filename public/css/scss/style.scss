@@ -200,7 +200,10 @@
         @include rem(10, margin-right);
     }
     h2{@include rem(20)}
-    h3{@include rem(16)}
+    h3{
+        @include rem(16);
+        color: $cinza2
+    }
 }
 /* ====== FORMULARIO ====== */
 #form-registro{
