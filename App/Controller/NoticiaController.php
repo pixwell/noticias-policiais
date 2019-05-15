@@ -79,8 +79,9 @@ class NoticiaController extends BaseController
     public function create()
     {
         $title = 'Enviar ocorrência';
-        $cidades = $this->modelCategory->all();        
-        echo $this->view( 'site/form', compact('title', 'cidades') );
+        $cidades = $this->modelCategory->all();
+        $ultimas = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC', 4);
+        echo $this->view( 'site/form', compact('title', 'cidades', 'ultimas') );
     }
     
     /**
