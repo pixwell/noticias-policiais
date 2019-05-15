@@ -50,10 +50,12 @@ class NoticiaController extends BaseController
     public function category($slug)
     {
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];    
-        $categoria = $this->modelNoticia->findWhere(['slug', $slug]);        
-        $title = $categoria[0]->title;
+        $categoria = $this->modelCategory->findWhere(['slug', $slug]);
+        $noticias = $this->modelNoticia->findWhere(['categories_id', $categoria[0]->id]);
+        $titleCategoria = $categoria[0]->title;
+        $title = '';
         
-        echo $this->view( 'site/category', compact('title', 'categoria') );
+        echo $this->view( 'site/category', compact('title', 'noticias', 'categoria', 'titleCategoria') );
     }
 
     public function create()
