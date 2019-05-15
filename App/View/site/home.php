@@ -20,7 +20,7 @@ include 'header.php';
                                 <div class="date"><?php echo date( 'd/m/Y' , strtotime( $noticia->created_at ) ); ?></div>
                             </div>
                             <div class="text">
-                                <h2><a href="#"><?php echo $noticia->title ?></a></h2>
+                                <h2><a href="<?php echo $noticia->slug ?>"><?php echo $noticia->title ?></a></h2>
                                 <?php echo $noticia->content ?>
                             </div>
                         </article>
