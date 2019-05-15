@@ -9,7 +9,7 @@ include 'header.php';
     <div class="container pt-50 pb-30">
 
         <div class="row">
-            <section class="col-lg-9 lista-noticias">
+            <section class="col-lg-9 lista-noticias" style="border-top: 1px solid #F4F4F4">
                 <article>
                     <div class="details">
                         <div class="category"><a href="#">Categoria</a></div>
