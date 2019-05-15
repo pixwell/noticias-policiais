@@ -32,6 +32,7 @@ abstract class BaseController
             $variables ? extract($variables) : null;
             $code_head = $this->get_header();
             $code_footer = $this->get_footer();
+            include 'helpersView.php';
             include_once $filePath;
         } else {
             http_response_code(404);
