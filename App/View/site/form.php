@@ -38,7 +38,15 @@ include 'header.php';
         
             <!-- Sidebar  -->
             <aside class="col-lg-3 sidebar">
-                <p>#TODO widget com últimas notícias</p>
+                <h2>Últimos registros</h2>
+                <?php 
+                if($ultimas){ 
+                    foreach ($ultimas as $noticia) { ?>
+                <h3><a href="/<?php echo $noticia->slug ?>"><?php echo limita_texto($noticia->title, 30) ?></a></h3>                    
+                <?php 
+                    }//foreach
+                }//if
+                ?>
             </aside><!-- /Sidebar  -->
         </div>
     
