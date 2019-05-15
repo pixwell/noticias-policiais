@@ -20,8 +20,7 @@ class NoticiaController extends BaseController
         $list = $this->modelCategory->all();
         foreach ($list as $value) {
             $newList[$value->id] = [
-                'title' => $value->title, 
-                'route' => $value->route,
+                'title' => $value->title,
                 'slug' => $value->slug
             ];
         }
