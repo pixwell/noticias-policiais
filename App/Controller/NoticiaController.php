@@ -16,6 +16,10 @@ class NoticiaController extends BaseController
         $this->modelNoticia = new Noticia;
     }
     
+    /**
+     * Reorganiza a lista de categorias, deixando o ID como chave em cada item
+     * @return array
+     */
     public function categoryList(){
         $list = $this->modelCategory->all();
         foreach ($list as $value) {
@@ -26,7 +30,10 @@ class NoticiaController extends BaseController
         }
         return $newList;
     }
-
+    
+    /**
+     * Noticias da Home organizadas por datas e filtradas por estado ativo
+     */
     public function index()
     {
         $title = 'Notícias Policiais';
@@ -34,7 +41,11 @@ class NoticiaController extends BaseController
         $categoryList = $this->categoryList();
         echo $this->view( 'site/home', compact('title', 'noticias', 'categoryList') );
     }
-
+    
+    /**
+     * Exibe as paginas single
+     * @param string $slug
+     */
     public function show($slug)
     {
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];
@@ -47,6 +58,10 @@ class NoticiaController extends BaseController
         echo $this->view( 'site/single', compact('title', 'noticia', 'categoryList') );
     }
     
+    /**
+     * Exibe as categorias de noticias
+     * @param string $slug
+     */
     public function category($slug)
     {
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];    
@@ -58,13 +73,20 @@ class NoticiaController extends BaseController
         echo $this->view( 'site/category', compact('title', 'noticias', 'categoria', 'titleCategoria') );
     }
 
+    /**
+     * Exibe o formulario de registro de ocorrencias
+     */
     public function create()
     {
         $title = 'Enviar ocorrência';
         $cidades = $this->modelCategory->all();        
         echo $this->view( 'site/form', compact('title', 'cidades') );
     }
-
+    
+    /**
+     * Grava os registros no banco de dados
+     * @param object $request
+     */
     public function store($request)
     {
         //campos do formulario
@@ -82,6 +104,6 @@ class NoticiaController extends BaseController
             }
         } else {
             echo 'Erro! Por favor preencha os campos do formulário corretamente.';
-        }
+        }//if
     }
 }
