@@ -50,18 +50,39 @@ abstract class BaseModel
         return $response;
     }
     
+    /**
+     * Select com a clausula WHERE
+     * Padrao de busca simples: [0 => 'campo', 1 => 'valor', 2 => 'operador']
+     * 2 condicoes ou mais (AND): 
+     * [['campo1', 'valor1'], ['campo2', 'valor2', '>'], ['campo2', 'valor2', '<']];
+     * 
+     * @param array $where
+     * @return void
+     */
     public function findWhere(array $where)
     {
-        //[0 => 'field', 1 => 'value', 2 => 'operator'];        
-        //SELECT * FROM `news` WHERE `created_at` = '2019-05-14 20:40:58' AND `author` = 'Nullam erat erat';
-        
-        var_dump($where);
-//        $query = 'SELECT * FROM ' . $this->table . ' WHERE ';
-//        $stmt = $this->pdo->prepare($query);
-//        $stmt->execute();
-//        $response = $stmt->fetchAll();
-//        $stmt->closeCursor();
-//
-//        return $response;        
+        //E um array multidimensional?
+        if( array_filter($where, 'is_array') ){
+            foreach( $where as $whereItem ){
+                /* Se o operador na posicao 2 do array nao for definido, entao 
+                 * sera 0 " = " (igual), senao sera o operador definido */
+                $operator =  (!isset($whereItem[2]) || empty($whereItem[2])) ? '=' : $whereItem[2];
+                //Montando a condicao: campo [OPERADOR] valor
+                $conditionItem[] =  '`'.$whereItem[0].'`' . ' ' . $operator . " '".$whereItem[1]."'";
+            }            
+            //Juntar todos os itens e formando a string com a condicao
+            $condition = implode(' AND ', $conditionItem);
+        } else {
+            $operator = (!isset($where[2]) || empty($where[2])) ? '=' : $where[2];
+            $condition = '`'.$where[0].'`' . ' ' . $operator . " '".$where[1]."'";
+        }
+        //SELECT * FROM `news` WHERE `author` = 'Nullam erat erat';
+        $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $condition;
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $response = $stmt->fetchAll();
+        $stmt->closeCursor();
+
+        return $response;        
     }
 }
