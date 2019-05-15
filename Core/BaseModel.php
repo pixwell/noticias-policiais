@@ -59,7 +59,7 @@ abstract class BaseModel
      * @param array $where
      * @return void
      */
-    public function findWhere(array $where)
+    public function findWhere(array $where, $orderBy = null)
     {
         //E um array multidimensional?
         if( array_filter($where, 'is_array') ){
@@ -76,8 +76,8 @@ abstract class BaseModel
             $operator = (!isset($where[2]) || empty($where[2])) ? '=' : $where[2];
             $condition = '`'.$where[0].'`' . ' ' . $operator . " '".$where[1]."'";
         }
-        //SELECT * FROM `news` WHERE `author` = 'Nullam erat erat';
-        $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $condition;
+        //SELECT * FROM `news` WHERE `author` = 'Nullam erat erat ORDER BY created_at DESC';
+        $query = 'SELECT * FROM ' . $this->table . ' WHERE ' . $condition . ($orderBy ? ' ORDER BY ' . $orderBy : '');
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $response = $stmt->fetchAll();
