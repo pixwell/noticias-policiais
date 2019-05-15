@@ -23,10 +23,13 @@ class NoticiaController extends BaseController
         echo $this->view( 'site/home', compact('title', 'noticias') );
     }
 
-    public function show($id, $request)
+    public function show($slug)
     {
-        echo "Show ID $id <br>";
-        print_r($request->post);
+        $slugNews = ['slug' => $slug]; 
+        $noticia = $this->modelNoticia->findWhere($slugNews);
+        $title = 'Single Notícia';
+        
+        echo $this->view( 'site/single', compact('title', 'noticias') );
     }
 
     public function create()
