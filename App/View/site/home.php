@@ -12,42 +12,20 @@ include 'header.php';
             <section class="col-lg-9">    
                 <!-- Lista de noticias  -->
                 <ul class="lista-noticias">
+                    <?php foreach ($noticias as $noticia) { ?>
                     <li>
                         <article>
                             <div class="details">
-                                <div class="category"><a href="/cidade/porto-alegre">Porto Alegre</a></div>
-                                <div class="date">06/05/2019</div>
+                                <div class="category"><a href="<?php echo $noticia->route ?>"><?php echo $noticia->categories_id ?></a></div>
+                                <div class="date"><?php echo $noticia->created_at ?></div>
                             </div>
                             <div class="text">
-                                <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure</a></h2>
-                                <p>Corrupti doloremque possimus deserunt soluta accusantium quaerat sapiente, nisi consectetur inventore maiores nesciunt quibusdam ea aspernatur omnis quo modi dolorem! Deleniti ...</p>
+                                <h2><a href="#"><?php echo $noticia->title ?></a></h2>
+                                <?php echo $noticia->content ?>
                             </div>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <div class="details">
-                                <div class="category"><a href="/cidade/cachoeirinha">Cachoeirinha</a></div>
-                                <div class="date">05/05/2019</div>
-                            </div>
-                            <div class="text">
-                                <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure</a></h2>
-                                <p>Corrupti doloremque possimus deserunt soluta accusantium quaerat sapiente, nisi consectetur inventore maiores nesciunt quibusdam ea aspernatur omnis quo modi dolorem! Deleniti ...</p>
-                            </div>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <div class="details">
-                                <div class="category"><a href="/cidade/canoas">Canoas</a></div>
-                                <div class="date">04/05/2019</div>
-                            </div>
-                            <div class="text">
-                                <h2><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit iure</a></h2>
-                                <p>Corrupti doloremque possimus deserunt soluta accusantium quaerat sapiente, nisi consectetur inventore maiores nesciunt quibusdam ea aspernatur omnis quo modi dolorem! Deleniti ...</p>
-                            </div>
-                        </article>
-                    </li>
+                    <?php } ?>                   
                 </ul><!-- /Lista de noticias  -->    
             </section>
         
