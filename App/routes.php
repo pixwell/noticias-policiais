@@ -6,5 +6,6 @@ return [
     ['/', 'NoticiaController', 'index'],
     ['registrar-ocorrencia', 'NoticiaController', 'create'],
     ['store-ocorrencia', 'NoticiaController', 'store'],
+    ['cidade/{slug}', 'NoticiaController', 'category'],
     ['{slug}', 'NoticiaController', 'show']
 ];
