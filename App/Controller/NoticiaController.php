@@ -41,9 +41,10 @@ class NoticiaController extends BaseController
         $query = ['slug', $slug];
         
         $noticia = $this->modelNoticia->findWhere($query);
-        $title = 'Single Notícia';
+        $title = $noticia[0]->title;
+        $categoryList = $this->categoryList();
         
-        echo $this->view( 'site/single', compact('title', 'noticia') );
+        echo $this->view( 'site/single', compact('title', 'noticia', 'categoryList') );
     }
 
     public function create()
