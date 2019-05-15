@@ -1736,9 +1736,12 @@ html {
     margin-right: 0.625rem;
 }
 
-.widget h2,
-.widget h3 {
+.widget h2 {
     font-size: 1.25rem;
+}
+
+.widget h3 {
+    font-size: 1rem;
 }
 
 /* ====== FORMULARIO ====== */

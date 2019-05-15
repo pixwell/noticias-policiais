@@ -199,10 +199,8 @@
         fill: #111;
         @include rem(10, margin-right);
     }
-    h2,
-    h3{
-        @include rem(20)
-    }
+    h2{@include rem(20)}
+    h3{@include rem(16)}
 }
 /* ====== FORMULARIO ====== */
 #form-registro{
