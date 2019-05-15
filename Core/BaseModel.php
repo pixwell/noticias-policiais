@@ -15,9 +15,10 @@ abstract class BaseModel
         $this->pdo = DataBase::conn();
     }
     
-    public function all($orderBy = null)
+    public function all($orderBy = null, $limit = null)
     {
-        $query = 'SELECT * FROM ' . $this->table . ($orderBy ? ' ORDER BY ' . $orderBy : '');
+        //SELECT * FROM `news` ORDER BY created_at DESC LIMIT 5;
+        $query = 'SELECT * FROM ' . $this->table . ($orderBy ? ' ORDER BY ' . $orderBy : '') . ($limit ? ' LIMIT ' . $limit : '');
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $response = $stmt->fetchAll();
