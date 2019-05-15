@@ -49,4 +49,19 @@ abstract class BaseModel
         $stmt->closeCursor();
         return $response;
     }
+    
+    public function findWhere(array $where)
+    {
+        //[0 => 'field', 1 => 'value', 2 => 'operator'];        
+        //SELECT * FROM `news` WHERE `created_at` = '2019-05-14 20:40:58' AND `author` = 'Nullam erat erat';
+        
+        var_dump($where);
+//        $query = 'SELECT * FROM ' . $this->table . ' WHERE ';
+//        $stmt = $this->pdo->prepare($query);
+//        $stmt->execute();
+//        $response = $stmt->fetchAll();
+//        $stmt->closeCursor();
+//
+//        return $response;        
+    }
 }
