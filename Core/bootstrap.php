@@ -1,4 +1,8 @@
 <?php
+//Sessao
+!session_id()? session_start() : ''; 
+        
+//Constantes
 $site_root = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 define('ASSETS', $site_root);
 //Arquivo de rotas da aplicacao
