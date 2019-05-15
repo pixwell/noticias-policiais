@@ -15,9 +15,9 @@ abstract class BaseModel
         $this->pdo = DataBase::conn();
     }
     
-    public function all()
+    public function all($orderBy = null)
     {
-        $query = 'SELECT * FROM ' . $this->table;
+        $query = 'SELECT * FROM ' . $this->table . ($orderBy ? ' ORDER BY ' . $orderBy : '');
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $response = $stmt->fetchAll();
