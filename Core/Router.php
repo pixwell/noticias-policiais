@@ -19,13 +19,12 @@ class Router
         $urlArray = explode('/', $this->url);
         //Se a URL tiver so a barra
         $url = empty(array_filter($urlArray)) ? '/' : $this->url;
-        $routeFound = false;
-        $param = [];
+        $routeFound = false;        
 
         //Compara a URL com as rotas do sistema e substitui caso haja parametros
         foreach ($this->routes as $route) {
             $routeArray = explode('/', $this->routeFilter($route[0]));
-
+            $param = [];
             //Percorrendo cada item do $routeArray
             for ($i = 0; $i < count($routeArray); $i++) {
                 //Se o item do $routeArray tiver '{' e tiver o mesmo tamanho de $urlArray
