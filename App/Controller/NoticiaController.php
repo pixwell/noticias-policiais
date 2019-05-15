@@ -15,12 +15,24 @@ class NoticiaController extends BaseController
         $this->modelCategory = new Category;
         $this->modelNoticia = new Noticia;
     }
+    
+    public function categoryList(){
+        $list = $this->modelCategory->all();
+        foreach ($list as $value) {
+            $newList[$value->id] = [
+                'title' => $value->title, 
+                'route' => $value->route
+            ];
+        }
+        return $newList;
+    }
 
     public function index()
     {
         $title = 'Notícias Policiais';
         $noticias = $this->modelNoticia->all();
-        echo $this->view( 'site/home', compact('title', 'noticias') );
+        $categoryList = $this->categoryList();
+        echo $this->view( 'site/home', compact('title', 'noticias', 'categoryList') );
     }
 
     public function show($slug)
