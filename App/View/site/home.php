@@ -21,7 +21,7 @@ include 'header.php';
                             </div>
                             <div class="text">
                                 <h2><a href="<?php echo $noticia->slug ?>"><?php echo $noticia->title ?></a></h2>
-                                <?php echo $noticia->content ?>
+                                <?php limita_texto( strip_tags($noticia->content), 250 ) ?>
                             </div>
                         </article>
                     </li>
