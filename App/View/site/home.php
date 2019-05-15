@@ -9,14 +9,16 @@ include 'header.php';
     <div class="container pt-50 pb-30">
 
         <div class="row">
-            <section class="col-lg-9">    
+            <section class="col-lg-9">
                 <!-- Lista de noticias  -->
                 <ul class="lista-noticias">
                     <?php foreach ($noticias as $noticia) { ?>
                     <li>
                         <article>
                             <div class="details">
-                                <div class="category"><a href="<?php echo $noticia->route ?>"><?php echo $noticia->categories_id ?></a></div>
+                                <div class="category">
+                                    <a href="<?php echo $categoryList[$noticia->categories_id]['route'] ?>"><?php echo $categoryList[$noticia->categories_id]['title'] ?></a>
+                                </div>
                                 <div class="date"><?php echo date( 'd/m/Y' , strtotime( $noticia->created_at ) ); ?></div>
                             </div>
                             <div class="text">
