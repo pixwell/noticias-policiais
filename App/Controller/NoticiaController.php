@@ -30,7 +30,7 @@ class NoticiaController extends BaseController
     public function index()
     {
         $title = 'Notícias Policiais';
-        $noticias = $this->modelNoticia->all();
+        $noticias = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC');
         $categoryList = $this->categoryList();
         echo $this->view( 'site/home', compact('title', 'noticias', 'categoryList') );
     }
