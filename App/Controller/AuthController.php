@@ -6,7 +6,7 @@ use Core\BaseController;
 
 class AuthController extends BaseController
 {
-    private $redirectTo = '';
+    private $redirectTo = '/';
     
     public function login()
     {
@@ -17,8 +17,12 @@ class AuthController extends BaseController
     public function auth($request)
     {
         $campos = $request->post;
-        if( !empty($campos->login) &&!empty($campos->password) ){            
-            echo '<div class="status-fail">Login ou senha incorretos.</div>';
+        
+        if( !empty($campos->login) &&!empty($campos->password) ){
+            echo json_encode([
+                'status' => true,
+                'redirect' => $this->redirectTo
+            ]);
         }
     }
 }
