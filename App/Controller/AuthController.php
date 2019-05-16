@@ -10,4 +10,8 @@ class AuthController extends BaseController {
         $title = 'Login';
         echo $this->view( 'admin/login-form', compact('title') );
     }
+    public function auth()
+    {
+      echo 'Método Auth'; 
+    }
 }
