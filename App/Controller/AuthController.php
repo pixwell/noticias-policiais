@@ -6,7 +6,7 @@ use Core\BaseController;
 
 class AuthController extends BaseController
 {
-    private $redirectTo = '/';
+    private $redirectTo = '/admin';
     
     public function login()
     {
