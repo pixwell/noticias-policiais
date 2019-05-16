@@ -17,4 +17,10 @@ class UserController extends BaseController
     {
         $this->userModel = new User;
     }
+    
+    public function createUser()
+    {
+        $title = 'Criar Usuário';
+        echo $this->view( 'admin/create-user', compact('title') );        
+    }
 }
