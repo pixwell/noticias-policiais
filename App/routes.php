@@ -8,6 +8,7 @@ return [
     ['store-ocorrencia', 'NoticiaController', 'store'],
     ['login', 'AuthController', 'login'],
     ['auth', 'AuthController', 'auth'],
+    ['admin', 'AdminController', 'index'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
     ['{slug}', 'NoticiaController', 'show']
 ];
