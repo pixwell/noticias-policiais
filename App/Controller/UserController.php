@@ -11,7 +11,6 @@ class UserController extends BaseController
     use Authenticate;
     
     private $userModel;
-    private $salt = '?%#tzT$30XnC$NMM/WgTho;DHIUV4z2XR@E?-/g}{Q[vCY;/Za[>^m1P0o=@=}6R';
     
     public function __construct()
     {
@@ -22,5 +21,30 @@ class UserController extends BaseController
     {
         $title = 'Criar Usuário';
         echo $this->view( 'admin/create-user', compact('title') );        
+    }
+    
+    public function storeUser($request)
+    {
+        $campos = $request->post;
+        
+        if( !empty($campos->login) &&!empty($campos->password) ){
+            //Senha temperada
+            $campos->password = password_hash($this->salt . $campos->password, PASSWORD_BCRYPT);      
+            $storeUser = $this->userModel->insert($campos);
+            
+            if($storeUser){
+                echo json_encode([
+                    'mensagem' => '<p class="status-success">Usuário criado com sucesso!</p>',
+                    'status' => true
+                ]);
+            } else {
+                echo json_encode([
+                    'mensagem' => '<p class="status-fail">Erro ao criar usuário.</p>',
+                    'status' => false
+                ]);
+            }
+        } else {
+            echo 'Erro! Por favor preencha os campos do formulário corretamente.';
+        }//if
     }
 }
