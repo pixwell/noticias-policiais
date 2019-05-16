@@ -97,10 +97,10 @@ jQuery.noConflict();
                     $statusLogin.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
                 success: function (response) {
-                    $statusLogin.empty().hide();
-                    $formLogin.get(0).reset();
+                    $statusLogin.empty().hide();                    
                     var $obj = JSON.parse(response);
                     if( $obj.status ){
+                        $formLogin.get(0).reset();
                         window.location.href = $obj.redirect;
                     }
                 },
