@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace Core;
 
-use Core\BaseController;
-
-class AuthController extends BaseController
+trait AuthController
 {
     private $redirectTo = '/admin';
     
