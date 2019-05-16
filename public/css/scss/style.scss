@@ -232,6 +232,7 @@
     }
 
 }
-#form-login{
+#form-login, 
+#form-create-user{
    @extend %baseForm; 
 }
