@@ -96,11 +96,16 @@ jQuery.noConflict();
                     $statusLogin.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
                 success: function (response) {
-                    $statusLogin.empty().hide().html(response).slideDown();
+                    $statusLogin.empty().hide();
                     $formLogin.get(0).reset();
+                    var $obj = JSON.parse(response);
+                    if( $obj.status ){
+                        window.location.href = $obj.redirect;
+                    }
                 },
                 error: function (response) {
-                    $statusLogin.empty().html(response);
+                    var $obj = JSON.parse(response);
+                    $statusLogin.empty().html('<div class="status-fail">Erro ao fazer login.</div>');
                 }
             }); //Ajax
         } else {
