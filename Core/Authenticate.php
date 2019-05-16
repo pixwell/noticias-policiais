@@ -5,8 +5,7 @@ namespace Core;
 trait Authenticate
 {
     private $redirectTo = '/admin';
-    protected $salt = '?%#tzT$30XnC$NMM/WgTho;DHIUV4z2XR@E?-/g}{Q[vCY;/Za[>^m1P0o=@=}6R';
-    
+        
     public function login()
     {
         $title = 'Login';

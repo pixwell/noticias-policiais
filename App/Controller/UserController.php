@@ -29,7 +29,7 @@ class UserController extends BaseController
         
         if( !empty($campos->login) &&!empty($campos->password) ){
             //Senha temperada
-            $campos->password = password_hash($this->salt . $campos->password, PASSWORD_BCRYPT);      
+            $campos->password = password_hash($campos->password, PASSWORD_BCRYPT);      
             $storeUser = $this->userModel->insert($campos);
             
             if($storeUser){
