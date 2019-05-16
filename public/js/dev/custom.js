@@ -70,6 +70,7 @@ jQuery.noConflict();
     var $formLogin = $('#form-login');
     var $login = $('#login');
     var $senha = $('#password');
+    var $statusLogin = $('#status-login');
 
     $formLogin.submit(function(event){
         event.preventDefault();
@@ -92,14 +93,14 @@ jQuery.noConflict();
                 type: 'POST',
                 data: $campos,
                 beforeSend: function () {
-                    $statusOcorrencia.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
+                    $statusLogin.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
                 success: function (response) {
-                    $statusOcorrencia.empty().hide().html(response).slideDown();
-                    $formRegistro.get(0).reset();
+                    $statusLogin.empty().hide().html(response).slideDown();
+                    $formLogin.get(0).reset();
                 },
                 error: function (response) {
-                    $statusOcorrencia.empty().html(response);
+                    $statusLogin.empty().html(response);
                 }
             }); //Ajax
         } else {
