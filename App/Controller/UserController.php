@@ -2,7 +2,15 @@
 
 namespace App\Controller;
 
-class UserController
+use Core\BaseController;
+use App\Model\User;
+
+class UserController extends BaseController
 {
-    //put your code here
+    private $userModel;
+    
+    public function __construct()
+    {
+        $this->userModel = new User;
+    }
 }
