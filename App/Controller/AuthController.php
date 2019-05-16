@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
-class AuthController {
+use Core\BaseController;
+
+class AuthController extends BaseController {
     public function login()
-    {}
+    {
+        $title = 'Login';
+        echo $this->view( 'admin/login-form', compact('title') );
+    }
 }
