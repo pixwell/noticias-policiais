@@ -27,6 +27,12 @@ abstract class BaseModel
         return $response;
     }
     
+    /**
+     * Insert de dados no banco de dados
+     * O objeto enviado deve ter a chave com o mesmo nome da coluna no BD
+     * @param object $data
+     * @return boolean
+     */
     public function insert($data)
     {
         //A consulta no BD retorna um OBJ, portanto ele deve ser convertido para array
