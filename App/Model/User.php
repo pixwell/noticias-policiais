@@ -1,6 +1,8 @@
 <?php
 namespace App\Model;
 
-class User {
+use Core\BaseModel;
+
+class User extends BaseModel {
     protected $table = 'user';
 }
