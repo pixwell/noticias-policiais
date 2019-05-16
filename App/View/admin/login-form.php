@@ -15,6 +15,7 @@ include $code_head;
                         <input type="submit" value="Login" class="btn-estilo1">
                     </form>                    
                 </div>
+                <div id="status-login"></div>
                 <p class="mt-20"><svg width="22" height="22" style="margin-right: 8px"><use href="#home" /></svg> Voltar para <a href="/">a Home</a></p>
             </section>
         </div>
