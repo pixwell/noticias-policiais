@@ -166,8 +166,11 @@ jQuery.noConflict();
                     $statusUser.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
                 },
                 success: function (response) {
-                    $statusUser.empty().hide().html(response).slideDown();
-                    $formUser.get(0).reset();
+                    var $obj = JSON.parse(response);
+                    $statusUser.empty().hide().html($obj.mensagem).slideDown();
+                    if( $obj.status ){
+                        $formUser.get(0).reset();
+                    }
                 },
                 error: function () {
                     $statusUser.empty().html('<div class="status-fail">Erro ao fazer login.</div>');
