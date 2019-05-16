@@ -99,14 +99,16 @@ jQuery.noConflict();
                 success: function (response) {
                     $statusLogin.empty().hide();                    
                     var $obj = JSON.parse(response);
+                    
                     if( $obj.status ){
                         $formLogin.get(0).reset();
                         window.location.href = $obj.redirect;
+                    } else {
+                        $statusLogin.empty().hide().html($obj.mensagem).slideDown();
                     }
                 },
-                error: function (response) {
-                    var $obj = JSON.parse(response);
-                    $statusLogin.empty().html('<div class="status-fail">Erro ao fazer login.</div>');
+                error: function () {
+                    $statusLogin.empty().hide().html('<div class="status-fail">Erro ao fazer login.</div>').slideDown();
                 }
             }); //Ajax
         } else {
