@@ -9,7 +9,7 @@ include $code_head;
         <div class="row d-flex justify-content-center align-content-center">
             <section class="col-lg-5">
                 <div class="widget">
-                    <form action="/auth" method="post" id="login">
+                    <form action="/auth" method="post" id="form-login">
                         <input type="text" name="login" id="login" placeholder="Login">
                         <input type="password" name="password" id="password" placeholder="Senha">
                         <input type="submit" value="Login" class="btn-estilo1">
