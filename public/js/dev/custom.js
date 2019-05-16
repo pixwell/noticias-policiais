@@ -66,5 +66,45 @@ jQuery.noConflict();
             return false;
         }
     });
+    //Form Login =============
+    var $formLogin = $('#form-login');
+    var $login = $('#login');
+    var $senha = $('#password');
+
+    $formLogin.submit(function(event){
+        event.preventDefault();
+
+        var $campos = {
+            login: $login.val(),
+            password: $senha.val()
+        };
+
+        //Validacoes ==================
+        if( !$campos.login ){
+            alerta($login, 'Insira seu login.');
+        } else if(!$campos.password){
+            alerta($senha, 'Insira a sua senha.');
+        }
+
+        if( $login.val() && $senha.val() ){
+            $.ajax({
+                url: '/auth',
+                type: 'POST',
+                data: $campos,
+                beforeSend: function () {
+                    $statusOcorrencia.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
+                },
+                success: function (response) {
+                    $statusOcorrencia.empty().hide().html(response).slideDown();
+                    $formRegistro.get(0).reset();
+                },
+                error: function (response) {
+                    $statusOcorrencia.empty().html(response);
+                }
+            }); //Ajax
+        } else {
+            return false;
+        }
+    });
 
 })(jQuery);
