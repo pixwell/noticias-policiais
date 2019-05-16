@@ -205,11 +205,11 @@
         color: $cinza2
     }
 }
-/* ====== FORMULARIO ====== */
-#form-registro{
+/* ====== FORMULARIOS ====== */
+%baseForm{
     input:not([type="submit"]),
-    select,
-    textarea{
+        select,
+        textarea{
         display: block;
         border: 1px solid $cinza5;
         @include rem(15, margin-bottom);
@@ -220,8 +220,10 @@
     }
 
     input:not([type="submit"]),
-    textarea{width: 100%}
-
+        textarea{width: 100%}
+}
+#form-registro{
+    @extend %baseForm;
     label{
         display: block;
         @include rem(5, margin-bottom);
@@ -229,4 +231,7 @@
         font-weight: 700;
     }
 
+}
+#login{
+   @extend %baseForm; 
 }
