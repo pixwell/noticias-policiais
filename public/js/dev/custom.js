@@ -66,6 +66,7 @@ jQuery.noConflict();
             return false;
         }
     });
+    
     //Form Login =============
     var $formLogin = $('#form-login');
     var $login = $('#login');
@@ -106,6 +107,70 @@ jQuery.noConflict();
                 error: function (response) {
                     var $obj = JSON.parse(response);
                     $statusLogin.empty().html('<div class="status-fail">Erro ao fazer login.</div>');
+                }
+            }); //Ajax
+        } else {
+            return false;
+        }
+    });
+    
+    //Form Criar Usuario =============
+    var $formUser = $('#form-create-user');
+    var $nome = $('#nome');
+    var $login = $('#login');
+    var $pass = $('#pass1');
+    var $matchPass = $('#pass2');
+    var $statusUser = $('#status-user');
+
+    $formUser.submit(function(event){
+        event.preventDefault();
+
+        var $campos = {
+            name: $nome.val(),
+            login: $login.val(),
+            password: $pass.val()
+        };
+
+        //Validacoes ==================
+        if(!$campos.name){
+            alerta($nome, 'Insira seu nome');
+        } else if( !$campos.login ){
+            alerta($login, 'Insira um Login');
+        } else if( !$pass.val() ){
+            alerta($pass, '');
+        } else if( !$matchPass.val() ){
+            alerta($matchPass, '');
+        }
+        
+        //Se um dos campos tiver conteudo
+        if($pass.val() && $matchPass.val()){
+            //Eles combinam, sao iguais?
+            if($pass.val() === $matchPass.val()){
+                //Incluir alteracao da senha
+                $campos['password'] = $pass.val();
+                $statusUser.slideDown('slow', function(){$(this).empty()})
+            } else {
+                //Para e mata o processo
+                $statusUser.empty().hide().html('<p class="status-fail">As senhas <strong>NÃO</strong> combinam. Por favor, corrija para prosseguir.</p>').slideDown();
+                return false;
+            }            
+        }
+        //FIM das Validacoes ==================
+
+        if( $login.val() && $pass.val() && $matchPass.val() ){
+            $.ajax({
+                url: '/store-user',
+                type: 'POST',
+                data: $campos,
+                beforeSend: function () {
+                    $statusUser.empty().hide().html('<p class="status-processing">Enviando ...</p>').slideDown();
+                },
+                success: function (response) {
+                    $statusUser.empty().hide().html(response).slideDown();
+                    $formUser.get(0).reset();
+                },
+                error: function () {
+                    $statusUser.empty().html('<div class="status-fail">Erro ao fazer login.</div>');
                 }
             }); //Ajax
         } else {
