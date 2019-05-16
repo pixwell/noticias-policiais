@@ -4,14 +4,21 @@ namespace App\Controller;
 
 use Core\BaseController;
 
-class AuthController extends BaseController {
+class AuthController extends BaseController
+{
+    private $redirectTo = '';
+    
     public function login()
     {
         $title = 'Login';
         echo $this->view( 'admin/login-form', compact('title') );
     }
-    public function auth()
+    
+    public function auth($request)
     {
-      echo 'Método Auth'; 
+        $campos = $request->post;
+        if( !empty($campos->login) &&!empty($campos->password) ){            
+            echo '<div class="status-fail">Login ou senha incorretos.</div>';
+        }
     }
 }
