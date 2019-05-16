@@ -1746,11 +1746,11 @@ html {
 }
 
 /* ====== FORMULARIOS ====== */
-#form-registro input:not([type="submit"]), #login input:not([type="submit"]),
+#form-registro input:not([type="submit"]), #form-login input:not([type="submit"]),
 #form-registro select,
-#login select,
+#form-login select,
 #form-registro textarea,
-#login textarea {
+#form-login textarea {
     display: block;
     border: 1px solid #E4E4E4;
     margin-bottom: 0.9375rem;
@@ -1760,9 +1760,9 @@ html {
     font-size: 1rem;
 }
 
-#form-registro input:not([type="submit"]), #login input:not([type="submit"]),
+#form-registro input:not([type="submit"]), #form-login input:not([type="submit"]),
 #form-registro textarea,
-#login textarea {
+#form-login textarea {
     width: 100%;
 }
 
