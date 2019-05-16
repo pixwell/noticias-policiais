@@ -6,9 +6,10 @@ return [
     ['/', 'NoticiaController', 'index'],
     ['registrar-ocorrencia', 'NoticiaController', 'create'],
     ['store-ocorrencia', 'NoticiaController', 'store'],
-    ['login', 'AuthController', 'login'],
-    ['auth', 'AuthController', 'auth'],
     ['admin', 'AdminController', 'index'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
-    ['{slug}', 'NoticiaController', 'show']
+    ['{slug}', 'NoticiaController', 'show'],
+    //Autenticacao
+    ['login', 'UserController', 'login'],
+    ['auth', 'UserController', 'auth'],
 ];
