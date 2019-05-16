@@ -2,7 +2,7 @@
 
 namespace Core;
 
-trait AuthController
+trait Authenticate
 {
     private $redirectTo = '/admin';
     
