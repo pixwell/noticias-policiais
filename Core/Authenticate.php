@@ -56,4 +56,10 @@ trait Authenticate
         }
         
     }
+    
+    public function logout()
+    {
+        Session::destroy('user');
+        header('Location: /login');
+    }
 }
