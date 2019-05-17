@@ -22,7 +22,6 @@ abstract class BaseController
         $filePath = $this->viewPath . $file . '.php';
         if( file_exists($filePath) ){
             $variables ? extract($variables) : null;
-            $code_footer = $this->get_footer();
             include 'helpersView.php';
             include_once $filePath;
         } else {
