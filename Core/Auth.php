@@ -9,32 +9,32 @@ class Auth {
     
     public function __construct()
     {
-        $user = Session::get('user');
-        if($user){
+        if(Session::get('user')){
+            $user = Session::get('user');
             $this->id = $user['id'];
             $this->name = $user['name'];
             $this->login = $user['login'];
         }
     }
     
-    public static function id()
+    public function id()
     {
-        return self::$id;
+        return $this->id;
     }
     
-    public static function name()
+    public function name()
     {
-        return self::$name;
+        return $this->name;
     }
     
-    public static function login()
+    public function login()
     {
-        return self::$login;
+        return $this->login;
     }
     
-    public static function check()
+    public function check()
     {
-        if( self::$id == null || self::$name == null || self::$login == null ){
+        if( $this->id == null || $this->name == null || $this->login == null ){
             return true;
         } else {
             return false;
