@@ -9,6 +9,8 @@ trait Authenticate
     private $userModel;
     private $sessao;
     private $redirectTo = '/admin';
+    private $login = '/login';
+    private $forbidden = '/login';
     
     public function __construct(){
         $this->userModel = new User;
@@ -61,6 +63,11 @@ trait Authenticate
     public function logout()
     {
         Session::destroy('user');
-        header('Location: /login');
+        header('Location: ' . $this->login);
+    }
+    
+    public static function forbidden()
+    {
+        header('Location: ' . $this->forbidden);
     }
 }
