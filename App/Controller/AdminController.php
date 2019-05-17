@@ -8,6 +8,7 @@ class AdminController extends BaseController
 {
     public function index()
     {
-       echo '<h1>Painel de controle</h1>'; 
+        $metaTitle = 'Home Administração';
+        echo $this->view('admin/home-admin', compact('metaTitle'));
     }
 }
