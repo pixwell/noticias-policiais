@@ -6,11 +6,13 @@ class Router
 {
     private $url;
     private $routes;
+    private $auth;
 
     public function __construct($urlBrowser, array $appRoutes)
     {
         $this->url = $urlBrowser;
         $this->routes = $appRoutes;
+        $this->auth = new Auth;
     }
 
     public function run()
@@ -43,6 +45,10 @@ class Router
                 $routeFound = true;
                 $controller = $route[1];
                 $action = $route[2];
+                //protecao de rota
+                if( ( isset($route[3]) && $route[3] == 'auth' ) && !$this->auth->check() ){
+                    Authenticate::forbidden();
+                }
                 break; //Sai do laco ao achar a rota
             }
         }
