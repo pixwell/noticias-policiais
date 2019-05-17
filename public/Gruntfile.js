@@ -54,7 +54,7 @@ module.exports = function(grunt){
             options: {
                 watchTask: true,
                 background: true,
-                proxy: "http://dev1.local/login",
+                proxy: "http://dev1.local/admin",
                 browser: ["chrome", "firefox", "opera", "iexplore"],
                 reloadOnRestart: false,              
                 notify: true,
