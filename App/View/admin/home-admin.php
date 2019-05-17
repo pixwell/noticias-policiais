@@ -1,6 +1,6 @@
 <?php
 get_head($metaTitle);
-include 'header.php';
+include 'header-admin.php';
 ?>
 
 <main>
