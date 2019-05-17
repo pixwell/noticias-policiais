@@ -36,7 +36,7 @@ function user_id(){
 *
 * @return void
 */
-function get_header() {
+function get_head() {
     $head = __DIR__ . '/../App/View/code_head.php';
     if (file_exists($head)) {
         include $head;
