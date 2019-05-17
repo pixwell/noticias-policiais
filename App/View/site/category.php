@@ -10,7 +10,7 @@ include 'header.php';
 
         <div class="row">
             <section class="col-lg-9">
-                <h2 class="mb-50">Notícias de <?php echo $titleCategoria  ?></h2>
+                <h2 class="mb-50">Notícias de <?php echo $metaTitle  ?></h2>
             
             <?php if($noticias){ ?>
                 <!-- Lista de noticias  -->
