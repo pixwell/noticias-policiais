@@ -8,6 +8,7 @@ return [
     ['store-ocorrencia', 'NoticiaController', 'store'],
     //Autenticacao
     ['login', 'UserController', 'login'],
+    ['logout', 'UserController', 'logout'],
     ['auth', 'UserController', 'auth'],
     ['create-user', 'UserController', 'createUser'],
     ['store-user', 'UserController', 'storeUser'],
