@@ -2,7 +2,7 @@
 
 //Rotas da aplicacao
 return [
-    //['rota', 'controller', 'action'],
+    //['rota', 'controller', 'action', 'auth'],
     ['/', 'NoticiaController', 'index'],
     ['registrar-ocorrencia', 'NoticiaController', 'create'],
     ['store-ocorrencia', 'NoticiaController', 'store'],
@@ -13,7 +13,7 @@ return [
     ['create-user', 'UserController', 'createUser'],
     ['store-user', 'UserController', 'storeUser'],
     
-    ['admin', 'AdminController', 'index'],
+    ['admin', 'AdminController', 'index', 'auth'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
     ['{slug}', 'NoticiaController', 'show'],
 ];
