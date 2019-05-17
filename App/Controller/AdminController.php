@@ -17,7 +17,7 @@ class AdminController extends BaseController
     public function index()
     {
         $metaTitle = 'Home Administração';
-        $sessao = Session::get('user');
-        echo $this->view('admin/home-admin', compact('metaTitle', 'sessao'));
+        $noticias = $this->noticiasModel->all('created_at DESC');
+        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias'));
     }
 }
