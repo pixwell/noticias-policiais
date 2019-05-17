@@ -1,7 +1,4 @@
-<?php 
-//Variavel reservada
-include $code_head;
-?>
+<?php get_head();?>
 
 <main>
     <div class="container pt-50 pb-30">
@@ -26,4 +23,4 @@ include $code_head;
     </div>
 </main>
 
-<?php include $code_footer ?>
+<?php get_footer(); ?>

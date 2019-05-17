@@ -1,7 +1,5 @@
-<?php 
-//Variavel reservada
-include $code_head;
-
+<?php
+get_head();
 include 'header.php';
 ?>
 
@@ -44,4 +42,4 @@ include 'header.php';
     </div>
 </main>
 
-<?php include $code_footer ?>
+<?php get_footer(); ?>

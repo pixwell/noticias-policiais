@@ -1,7 +1,6 @@
 <?php
-//Variavel reservada
 get_head();
-include 'header-admin.php';
+include 'header.php';
 ?>
 
 <main>
