@@ -21,7 +21,7 @@
     padding: px2rem(8) px2rem(20);
     color: $cinza1 !important; //Sobrescrevendo quelquer outra regra
     background: $amarelo;    
-    svg{fill: $cinza1 !important}
+    svg{fill: $cinza1 !important;}
     &:hover{
         background: darken($amarelo, 13%);
         color: darken($amarelo, 50%)
@@ -33,7 +33,10 @@
     padding: px2rem(5) px2rem(10);
     color: #FFF !important; //Sobrescrevendo quelquer outra regra
     background: $verde;    
-    svg{fill: #FFF !important}
+    svg{
+        fill: #FFF !important;
+        margin-bottom: 3px;
+    }
     
     &:hover{
         background: darken($verde, 13%);
@@ -46,7 +49,10 @@
     padding: px2rem(5) px2rem(10);
     color: #FFF !important; //Sobrescrevendo quelquer outra regra
     background: $vermelho;    
-    svg{fill: #FFF !important}
+    svg{
+        fill: #FFF !important;
+        margin-bottom: 3px;
+    }
     
     &:hover{
         background: darken($vermelho, 13%);

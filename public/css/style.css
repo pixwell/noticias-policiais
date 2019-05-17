@@ -1570,6 +1570,7 @@ html {
 
 .btn-success svg {
     fill: #FFF !important;
+    margin-bottom: 3px;
 }
 
 .btn-success:hover {
@@ -1585,6 +1586,7 @@ html {
 
 .btn-fail svg {
     fill: #FFF !important;
+    margin-bottom: 3px;
 }
 
 .btn-fail:hover {
