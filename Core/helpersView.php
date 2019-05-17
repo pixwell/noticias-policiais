@@ -11,9 +11,11 @@ function limita_texto($texto, $numChar = 40, $dot = true, $echo = true){
 }
 
 function auth_check(){
-    return \Core\Auth::check();
+    $user = new \Core\Auth;
+    return $user->check();
 }
 
 function user_name(){
-    return \Core\Auth::name();
+    $user = new \Core\Auth;
+    return $user->name();
 }
