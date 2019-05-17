@@ -33,6 +33,7 @@ trait Authenticate
                 $user = [
                     'id' => $userData[0]->id,
                     'name' => $userData[0]->name,
+                    'login' => $userData[0]->login,
                 ];                
                 Session::set('user', $user);
                 
