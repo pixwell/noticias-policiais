@@ -1,6 +1,6 @@
 <?php
 //Variavel reservada
-include $code_head;
+get_head();
 include 'header-admin.php';
 ?>
 
@@ -32,4 +32,4 @@ include 'header-admin.php';
     </div>
 </main>
 
-<?php include $code_footer ?>
+<?php get_footer(); ?>
