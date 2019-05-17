@@ -10,7 +10,7 @@ trait Authenticate
     private $sessao;
     private $redirectTo = '/admin';
     private $login = '/login';
-    private $forbidden = '/login';
+    private static $forbidden = '/login';
     
     public function __construct(){
         $this->userModel = new User;
@@ -68,6 +68,6 @@ trait Authenticate
     
     public static function forbidden()
     {
-        header('Location: ' . $this->forbidden);
+        header('Location: ' . self::$forbidden);
     }
 }
