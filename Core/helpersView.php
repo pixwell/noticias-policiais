@@ -29,3 +29,32 @@ function user_id(){
     $user = new \Core\Auth;
     return $user->id();
 }
+
+/**
+* Inclusao do codigo no header da view
+* Do <html> ate abertura do <body>
+*
+* @return void
+*/
+function get_header() {
+    $head = __DIR__ . '/../App/View/code_head.php';
+    if (file_exists($head)) {
+        include $head;
+    } else {
+        throw new \Exception("Arquivo View/code_head.php não encontrado.");
+    }
+}
+
+/**
+ * Inclusao dos scripts JS, fechamento das tags </body> e </html>
+ *
+ * @return void
+ */
+function get_footer() {
+    $footer = __DIR__ . '/../App/View/code_footer.php';
+    if (file_exists($footer)) {
+        include $footer;
+    } else {
+        throw new \Exception("Arquivo View/code_footer.php não encontrado.");
+    }
+}
