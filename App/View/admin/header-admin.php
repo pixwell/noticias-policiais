@@ -11,7 +11,11 @@
         <nav id="main-menu">
             <ul class="menu">
                 <li><span style="margin-right: 8px">Você está logado como, <strong>Fulano da Silva</strong></span></li>
-                <li><a href="/cidade/porto-alegre" class="btn-estilo1">Deslogar</a></li>
+                <li>
+                    <a href="/logout" class="btn-estilo1"><svg width="16" height="14" style="margin-right: 5px">
+                        <use href="#power" /></svg>Deslogar
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
