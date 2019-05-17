@@ -60,6 +60,22 @@
     }
 }
 
+.btn-processing{
+    @extend %btnBase;
+    padding: px2rem(5) px2rem(10);
+    color: $cinza3 !important; //Sobrescrevendo quelquer outra regra
+    background: $cinza5; 
+    svg{
+        fill: $cinza3 !important;
+        margin-bottom: 3px;
+    }
+    
+    &:hover{
+        background: darken($cinza5, 13%);
+        color: darken($cinza3, 50%)
+    }
+}
+
 .text-center{text-align: center}
 
 .status-success,

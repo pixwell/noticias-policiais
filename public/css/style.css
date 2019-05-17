@@ -1534,7 +1534,7 @@ html {
 }
 
 /* ====== CLASSES GLOBAIS ====== */
-.btn-estilo1, .btn-success, .btn-fail {
+.btn-estilo1, .btn-success, .btn-fail, .btn-processing {
     border: none;
     display: inline-block;
     font-family: "Oswald", sans-serif;
@@ -1592,6 +1592,22 @@ html {
 .btn-fail:hover {
     background: #8b3131;
     color: black;
+}
+
+.btn-processing {
+    padding: 0.3125rem 0.625rem;
+    color: #999 !important;
+    background: #E4E4E4;
+}
+
+.btn-processing svg {
+    fill: #999 !important;
+    margin-bottom: 3px;
+}
+
+.btn-processing:hover {
+    background: #c3c3c3;
+    color: #1a1919;
 }
 
 .text-center {
