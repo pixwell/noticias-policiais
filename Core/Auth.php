@@ -34,7 +34,7 @@ class Auth {
     
     public function check()
     {
-        if( $this->id == null || $this->name == null || $this->login == null ){
+        if( !$this->id == null || !$this->name == null || !$this->login == null ){
             return true;
         } else {
             return false;
