@@ -1,6 +1,7 @@
 <?php
 //Variavel reservada
 include $code_head;
+include 'header-admin.php';
 ?>
 
 <main>
