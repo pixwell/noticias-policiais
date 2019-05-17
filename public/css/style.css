@@ -187,7 +187,7 @@ body {
 h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    color: #333;
+    color: #111;
     line-height: 150%;
     margin-bottom: 1.25rem;
 }
@@ -1534,13 +1534,11 @@ html {
 }
 
 /* ====== CLASSES GLOBAIS ====== */
-.btn-estilo1 {
+.btn-estilo1, .btn-succes {
     border: none;
     display: inline-block;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    color: #111 !important;
-    background: #ffca47;
     padding: 0.5rem 1.25rem;
     box-shadow: 1px 1px 2px rgba(17, 17, 17, 0.3);
     -webkit-transition: all 0.5s ease-in-out;
@@ -1550,7 +1548,30 @@ html {
     cursor: pointer;
 }
 
+.btn-estilo1 {
+    color: #111 !important;
+    background: #ffca47;
+}
+
+.btn-estilo1 svg {
+    fill: #111;
+}
+
 .btn-estilo1:hover {
+    background: #ffb705;
+    color: #473300;
+}
+
+.btn-succes {
+    color: #FFF !important;
+    background: #42be50;
+}
+
+.btn-succes svg {
+    fill: #42be50;
+}
+
+.btn-succes:hover {
     background: #ffb705;
     color: #473300;
 }

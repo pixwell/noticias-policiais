@@ -6,23 +6,39 @@
 @import 'components/_grid.scss';
 
 /* ====== CLASSES GLOBAIS ====== */
-.btn-estilo1{
+%btnBase{
     border: none;
     display: inline-block;
     font-family: $os;
     font-weight: 700;
-    color: #111 !important; //Sobrescrevendo quelquer outra regra
-    background: $amarelo;
     padding: px2rem(8) px2rem(20);
     box-shadow: 1px 1px 2px rgba(#111, 0.3);
     @include transition; 
     cursor: pointer;
+}
 
+.btn-estilo1{  
+    @extend %btnBase;
+    color: #111 !important; //Sobrescrevendo quelquer outra regra
+    background: $amarelo;    
+    svg{fill: #111}
     &:hover{
         background: darken($amarelo, 13%);
         color: darken($amarelo, 50%)
     }
 }
+
+.btn-succes{
+    @extend %btnBase;
+    color: #FFF !important; //Sobrescrevendo quelquer outra regra
+    background: #42be50;    
+    svg{fill: #42be50}
+    &:hover{
+        background: darken($amarelo, 13%);
+        color: darken($amarelo, 50%)
+    }
+}
+
 .text-center{text-align: center}
 
 .status-success,
