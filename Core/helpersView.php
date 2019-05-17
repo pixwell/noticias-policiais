@@ -19,3 +19,13 @@ function user_name(){
     $user = new \Core\Auth;
     return $user->name();
 }
+
+function user_login(){
+    $user = new \Core\Auth;
+    return $user->login();
+}
+
+function user_id(){
+    $user = new \Core\Auth;
+    return $user->id();
+}
