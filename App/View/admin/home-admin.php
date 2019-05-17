@@ -22,7 +22,11 @@ include 'header-admin.php';
                                 <li><svg><use href="#clock" /></svg> <?php echo date( 'd/m/Y' , strtotime( $noticia->created_at ) ); ?></li>
                             </ul>
                             <div class="mt-20">
+                                <?php if($noticia->active){ ?>                                
+                                <a href="#" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
+                                <?php } else { ?>
                                 <a href="#" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
+                                <?php } ?>
                                 <a href="#" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                             </div>
                         </div>
