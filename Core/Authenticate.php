@@ -7,10 +7,12 @@ use App\Model\User;
 trait Authenticate
 {
     private $userModel;
+    private $sessao;
     private $redirectTo = '/admin';
     
     public function __construct(){
         $this->userModel = new User;
+        $this->sessao = new Session;
     }
 
     public function login()
@@ -28,7 +30,12 @@ trait Authenticate
             //Achou algum login? Comparar as senhas
             if( $userData && password_verify($campos->password, $userData[0]->password) ){                
                 //Autenticar
-                 
+                $user = [
+                    'id' => $userData[0]->id,
+                    'name' => $userData[0]->name,
+                ];                
+                Session::set('user', $user);
+                
                 //Redirecionar
                 echo json_encode([
                     'status' => true,
