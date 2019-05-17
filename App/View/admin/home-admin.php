@@ -6,7 +6,6 @@ include 'header-admin.php';
 
 <main>
     <div class="container pt-50 pb-30">
-
         <!-- Lista de noticias  -->
         <ul class="lista-noticias-admin">
             <li>
