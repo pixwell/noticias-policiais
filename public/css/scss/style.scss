@@ -10,32 +10,47 @@
     border: none;
     display: inline-block;
     font-family: $os;
-    font-weight: 700;
-    padding: px2rem(8) px2rem(20);
-    box-shadow: 1px 1px 2px rgba(#111, 0.3);
+    font-weight: 700;    
+    box-shadow: 1px 1px 2px rgba($cinza1, 0.3);
     @include transition; 
     cursor: pointer;
 }
 
 .btn-estilo1{  
     @extend %btnBase;
-    color: #111 !important; //Sobrescrevendo quelquer outra regra
+    padding: px2rem(8) px2rem(20);
+    color: $cinza1 !important; //Sobrescrevendo quelquer outra regra
     background: $amarelo;    
-    svg{fill: #111}
+    svg{fill: $cinza1 !important}
     &:hover{
         background: darken($amarelo, 13%);
         color: darken($amarelo, 50%)
     }
 }
 
-.btn-succes{
+.btn-success{
     @extend %btnBase;
+    padding: px2rem(5) px2rem(10);
     color: #FFF !important; //Sobrescrevendo quelquer outra regra
-    background: #42be50;    
-    svg{fill: #42be50}
+    background: $verde;    
+    svg{fill: #FFF !important}
+    
     &:hover{
-        background: darken($amarelo, 13%);
-        color: darken($amarelo, 50%)
+        background: darken($verde, 13%);
+        color: darken($verde, 50%)
+    }
+}
+
+.btn-fail{
+    @extend %btnBase;
+    padding: px2rem(5) px2rem(10);
+    color: #FFF !important; //Sobrescrevendo quelquer outra regra
+    background: $vermelho;    
+    svg{fill: #FFF !important}
+    
+    &:hover{
+        background: darken($vermelho, 13%);
+        color: darken($vermelho, 50%)
     }
 }
 
@@ -64,7 +79,7 @@
 }
 /* ====== HEADER ====== */
 #header{
-    background: #111;
+    background: $cinza1;
     @include rem(20, padding-top);
     @include rem(20, padding-bottom);
     color: #FFF;
@@ -183,12 +198,12 @@
             a{color: $amarelo}
             margin-right: -5px;
             line-height: 1;
-            box-shadow: 1px 1px 1px rgba(#111, 0.2);
+            box-shadow: 1px 1px 1px rgba($cinza1, 0.2);
         }
 
         .category{
             display: inline-block;
-            background: #111;
+            background: $cinza1;
             color: $amarelo;
         }
         .date{
@@ -234,7 +249,7 @@
     @include rem(20, padding);
     svg{
         float: left;
-        fill: #111;
+        fill: $cinza1;
         @include rem(10, margin-right);
     }
     h2{@include rem(20)}

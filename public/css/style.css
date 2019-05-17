@@ -1534,12 +1534,11 @@ html {
 }
 
 /* ====== CLASSES GLOBAIS ====== */
-.btn-estilo1, .btn-succes {
+.btn-estilo1, .btn-success, .btn-fail {
     border: none;
     display: inline-block;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    padding: 0.5rem 1.25rem;
     box-shadow: 1px 1px 2px rgba(17, 17, 17, 0.3);
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -1549,12 +1548,13 @@ html {
 }
 
 .btn-estilo1 {
+    padding: 0.5rem 1.25rem;
     color: #111 !important;
     background: #ffca47;
 }
 
 .btn-estilo1 svg {
-    fill: #111;
+    fill: #111 !important;
 }
 
 .btn-estilo1:hover {
@@ -1562,18 +1562,34 @@ html {
     color: #473300;
 }
 
-.btn-succes {
+.btn-success {
+    padding: 0.3125rem 0.625rem;
     color: #FFF !important;
     background: #42be50;
 }
 
-.btn-succes svg {
-    fill: #42be50;
+.btn-success svg {
+    fill: #FFF !important;
 }
 
-.btn-succes:hover {
-    background: #ffb705;
-    color: #473300;
+.btn-success:hover {
+    background: #318d3b;
+    color: #000100;
+}
+
+.btn-fail {
+    padding: 0.3125rem 0.625rem;
+    color: #FFF !important;
+    background: #bc4242;
+}
+
+.btn-fail svg {
+    fill: #FFF !important;
+}
+
+.btn-fail:hover {
+    background: #8b3131;
+    color: black;
 }
 
 .text-center {
