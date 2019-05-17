@@ -36,9 +36,10 @@ function user_id(){
 *
 * @return void
 */
-function get_head() {
+function get_head($title = null) {
     $head = __DIR__ . '/../App/View/code_head.php';
     if (file_exists($head)) {
+        $metaTitle = $title;
         include $head;
     } else {
         throw new \Exception("Arquivo View/code_head.php não encontrado.");
