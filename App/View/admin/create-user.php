@@ -1,4 +1,4 @@
-<?php get_head();?>
+<?php get_head($metaTitle);?>
 
 <main>
     <div class="container pt-50 pb-30">

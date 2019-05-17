@@ -1,5 +1,5 @@
 <?php
-get_head();
+get_head($metaTitle);
 include 'header.php';
 ?>
 
