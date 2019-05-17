@@ -36,10 +36,10 @@ class NoticiaController extends BaseController
      */
     public function index()
     {
-        $title = 'Notícias Policiais';
+        $metaTitle = 'Notícias Policiais';
         $noticias = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC');
         $categoryList = $this->categoryList();
-        echo $this->view( 'site/home', compact('title', 'noticias', 'categoryList') );
+        echo $this->view( 'site/home', compact('metaTitle', 'noticias', 'categoryList') );
     }
     
     /**
@@ -52,10 +52,10 @@ class NoticiaController extends BaseController
         $query = ['slug', $slug];
         
         $noticia = $this->modelNoticia->findWhere($query);
-        $title = $noticia[0]->title;
+        $metaTitle = $noticia[0]->title;
         $categoryList = $this->categoryList();
         
-        echo $this->view( 'site/single', compact('title', 'noticia', 'categoryList') );
+        echo $this->view( 'site/single', compact('metaTitle', 'noticia', 'categoryList') );
     }
     
     /**
@@ -67,10 +67,10 @@ class NoticiaController extends BaseController
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];    
         $categoria = $this->modelCategory->findWhere(['slug', $slug]);
         $noticias = $this->modelNoticia->findWhere( [['categories_id', $categoria[0]->id], ['active', 1]], 'created_at DESC' );
-        $titleCategoria = $categoria[0]->title;
-        $title = '';
+        $metaTitleCategoria = $categoria[0]->title;
+        $metaTitle = '';
         
-        echo $this->view( 'site/category', compact('title', 'noticias', 'categoria', 'titleCategoria') );
+        echo $this->view( 'site/category', compact('metaTitle', 'noticias', 'categoria', 'titleCategoria') );
     }
 
     /**
@@ -78,10 +78,10 @@ class NoticiaController extends BaseController
      */
     public function create()
     {
-        $title = 'Enviar ocorrência';
+        $metaTitle = 'Enviar ocorrência';
         $cidades = $this->modelCategory->all();
         $ultimas = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC', 4);
-        echo $this->view( 'site/form', compact('title', 'cidades', 'ultimas') );
+        echo $this->view( 'site/form', compact('metaTitle', 'cidades', 'ultimas') );
     }
     
     /**

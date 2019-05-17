@@ -19,8 +19,8 @@ class UserController extends BaseController
     
     public function createUser()
     {
-        $title = 'Criar Usuário';
-        echo $this->view( 'admin/create-user', compact('title') );        
+        $metaTitle = 'Criar Usuário';
+        echo $this->view( 'admin/create-user', compact('metaTitle') );        
     }
     
     public function storeUser($request)
