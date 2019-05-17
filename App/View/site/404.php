@@ -13,4 +13,4 @@ include 'header.php';
     </div>
 </main>
 
-<?php include __DIR__ . '/../code_head.php'; ?>
+<?php include __DIR__ . '/../code_footer.php'; ?>
