@@ -13,6 +13,16 @@ h1, h2, h3{
     a{color: inherit}
 }
 
+h2, h3{
+    a{
+        &:hover{
+            color: darken($amarelo, 50%);
+            text-shadow: 1px 1px 1px rgba(#111, 0.3);
+        }
+    }
+}
+
+
 h1{@include rem(30)}
 h2{@include rem(28)}
 h3{@include rem(24)}
