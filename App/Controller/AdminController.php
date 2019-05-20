@@ -59,9 +59,14 @@ class AdminController extends BaseController
     
     public function toggleActive($id){
         $noticia = $this->noticiasModel->find($id);
-        echo '<pre>';
-        print_r($noticia);
-        echo '</pre>';
+        
+        if($noticia && $noticia->active == 0){            
+            $setValue = ['active' => 1];            
+            $update = $this->noticiasModel->update($id, $setValue); 
+        } elseif($noticia && $noticia->active == 1){
+            $setValue = ['active' => 0];            
+            $update = $this->noticiasModel->update($id, $setValue);            
+        }
     }
     
     public function delete($id){
