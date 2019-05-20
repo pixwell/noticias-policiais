@@ -14,6 +14,7 @@ return [
     ['store-user', 'UserController', 'storeUser'],
     
     ['admin', 'AdminController', 'index', 'auth'],
+    ['admin/{slug}', 'AdminController', 'show', 'auth'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
     ['{slug}', 'NoticiaController', 'show'],
 ];
