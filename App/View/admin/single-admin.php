@@ -35,7 +35,7 @@ include 'header-admin.php';
                         </ul>
                         <div class="mt-20">
                             <?php if ($page->active) { ?>                                
-                                <a href="#" id="aprovado" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
+                                <a href="/admin/<?php echo $page->id ?>/change-status" id="aprovado" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
                             <?php } else { ?>
                                 <a href="/admin/<?php echo $page->id ?>/change-status" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                             <?php } ?>
