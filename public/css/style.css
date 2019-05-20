@@ -1796,7 +1796,7 @@ html {
     line-height: 1;
 }
 
-.lista-noticias-admin .details svg {
+.news-detail svg {
     fill: #7e7e7e;
     width: 1rem;
     height: 1.125rem;
@@ -1804,7 +1804,7 @@ html {
     vertical-align: text-bottom;
 }
 
-.lista-noticias-admin .details ul {
+.news-detail ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -1812,12 +1812,12 @@ html {
     flex-wrap: wrap;
 }
 
-.lista-noticias-admin .details ul li {
+.news-detail ul li {
     margin-bottom: 0.625rem;
     margin-right: 0.5rem;
 }
 
-.lista-noticias-admin .details ul li:first-child {
+.news-detail ul li:first-child {
     width: 100%;
 }
 

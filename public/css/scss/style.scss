@@ -243,25 +243,26 @@
         @include rem(30, margin-bottom);
     }
     h2{line-height: 1;}
-    .details{
-        svg{
-            fill: $cinza2;
-            @include rem(16, width);
-            @include rem(18, height);
-            @include rem(3, margin-right);
-            vertical-align: text-bottom;
-        }
-        
-        ul{
-            @include ul-reset;
-            display: flex;
-            flex-wrap: wrap;
-            
-            li{
-                @include rem(10, margin-bottom);
-                @include rem(8, margin-right);
-                &:first-child{width: 100%}
-            }
+}
+
+.news-detail{
+    svg{
+        fill: $cinza2;
+        @include rem(16, width);
+        @include rem(18, height);
+        @include rem(3, margin-right);
+        vertical-align: text-bottom;
+    }
+
+    ul{
+        @include ul-reset;
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            @include rem(10, margin-bottom);
+            @include rem(8, margin-right);
+            &:first-child{width: 100%}
         }
     }
 }
