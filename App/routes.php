@@ -15,6 +15,7 @@ return [
     
     ['admin', 'AdminController', 'index', 'auth'],
     ['admin/{id}/ativar/', 'AdminController', 'approved', 'auth'],
+    ['admin/{id}/delete/', 'AdminController', 'delete', 'auth'],
     ['admin/{slug}', 'AdminController', 'show', 'auth'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
     ['{slug}', 'NoticiaController', 'show'],
