@@ -45,12 +45,12 @@
         <path d="M34.564 40.07H5.762V11.276h28.802v1.512l5.762-4.748V5.516H0v40.315h40.326V20.854l-5.762 6.911z"/>
         <path d="M13.255 17.135l-2.224 2.425 14.214 16.383L50 6.248l-1.951-2.079-22.804 18.763z"/>
     </symbol>
-    <symbol viewBox="0 0 90 75" preserveAspectRatio="xMidYMid" class="2points" style="background:0 0" id="loader">
+    <symbol viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="2points" style="background:0 0" id="loader">
         <title>loader</title>
         <circle cy="50" cx="66.547" fill="#111" r="20">
             <animate attributeName="cx" calcMode="linear" values="30;70;30" keyTimes="0;0.5;1" dur="1" begin="-0.5s" repeatCount="indefinite"/>
         </circle>
-        <circle cy="50" cx="33.453" fill="#ffca47" r="20">
+        <circle cy="50" cx="33.453" fill="#ff8c00" r="20">
             <animate attributeName="cx" calcMode="linear" values="30;70;30" keyTimes="0;0.5;1" dur="1" begin="0s" repeatCount="indefinite"/>
         </circle>
         <circle cy="50" cx="66.547" fill="#111" r="20">
