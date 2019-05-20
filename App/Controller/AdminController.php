@@ -56,4 +56,8 @@ class AdminController extends BaseController
         
         echo $this->view( 'admin/single-admin', compact('metaTitle', 'noticia', 'categoryList') );
     }
+    
+    public function approved($id){
+        echo "ID $id ativo";
+    }
 }
