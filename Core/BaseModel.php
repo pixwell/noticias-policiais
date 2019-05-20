@@ -57,6 +57,18 @@ abstract class BaseModel
         return $response;
     }
     
+    public function find($id)
+    {
+        $query = 'SELECT * FROM ' . $this->table . ' WHERE id = :id';
+        $stmt->bindValue(':id', $id);
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $response = $stmt->fetch();
+        $stmt->closeCursor();
+
+        return $response;
+    }
+    
     /**
      * Select com a clausula WHERE
      * Padrao de busca simples: [0 => 'campo', 1 => 'valor', 2 => 'operador']
@@ -90,6 +102,6 @@ abstract class BaseModel
         $response = $stmt->fetchAll();
         $stmt->closeCursor();
 
-        return $response;        
+        return $response;
     }
 }
