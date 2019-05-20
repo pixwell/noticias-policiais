@@ -60,4 +60,8 @@ class AdminController extends BaseController
     public function approved($id){
         echo "ID $id ativo";
     }
+    
+    public function delete($id){
+        echo "ID $id deletado";
+    }
 }
