@@ -15,7 +15,7 @@ include 'header-admin.php';
                             <h2><a href="/admin/<?php echo $noticia->slug ?>"><?php echo $noticia->title ?></a></h2>
                             <?php limita_texto( strip_tags($noticia->content), 250 ) ?>
                         </div>
-                        <div class="details col-md-4 col-lg-3 mb-20">
+                        <div class="news-detail col-md-4 col-lg-3 mb-20">
                             <ul>
                                 <li><svg><use href="#user" /></svg> <?php echo $noticia->author ?></li>
                                 <li><svg><use href="#folder" /></svg> <?php echo $categoryList[$noticia->categories_id]['title'] ?></li>
