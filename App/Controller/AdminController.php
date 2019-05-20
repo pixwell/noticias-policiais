@@ -40,4 +40,20 @@ class AdminController extends BaseController
         $categoryList = $this->categoryList();
         echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList'));
     }
+    
+    /**
+     * Exibe as paginas single
+     * @param string $slug
+     */
+    public function show($slug)
+    {
+        //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];
+        $query = ['slug', $slug];
+        
+        $noticia = $this->noticiasModel->findWhere($query);
+        $metaTitle = $noticia[0]->title;
+        $categoryList = $this->categoryList();
+        
+        echo $this->view( 'admin/single-admin', compact('metaTitle', 'noticia', 'categoryList') );
+    }
 }
