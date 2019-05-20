@@ -23,9 +23,9 @@ include 'header-admin.php';
                             </ul>
                             <div class="mt-20">
                                 <?php if($noticia->active){ ?>                                
-                                <a href="#" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
+                                <a href="#" class="btn-processing" id="aprovado" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
                                 <?php } else { ?>
-                                <a href="#" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
+                                <a href="/admin/<?php echo $noticia->id ?>/ativar" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                                 <?php } ?>
                                 <a href="#" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                             </div>
