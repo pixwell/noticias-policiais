@@ -9,7 +9,7 @@ include 'header-admin.php';
             <!-- Lista de noticias  -->
             <ul class="lista-noticias-admin">
             <?php foreach ($noticias as $noticia) : ?>                
-                <li>
+                <li id="item-<?php echo $noticia->id ?>">
                     <article class="row">
                         <div class="text col-md-8 col-lg-9 mb-20">
                             <h2><a href="/admin/<?php echo $noticia->slug ?>"><?php echo $noticia->title ?></a></h2>
