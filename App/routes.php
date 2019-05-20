@@ -14,7 +14,7 @@ return [
     ['store-user', 'UserController', 'storeUser'],
     
     ['admin', 'AdminController', 'index', 'auth'],
-    ['admin/{id}/ativar/', 'AdminController', 'approved', 'auth'],
+    ['admin/{id}/change-status/', 'AdminController', 'toggleActive', 'auth'],
     ['admin/{id}/delete/', 'AdminController', 'delete', 'auth'],
     ['admin/{slug}', 'AdminController', 'show', 'auth'],
     ['cidade/{slug}', 'NoticiaController', 'category'],
