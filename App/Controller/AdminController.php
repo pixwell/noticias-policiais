@@ -58,12 +58,21 @@ class AdminController extends BaseController
     }
     
     public function toggleActive($id){
+        sleep(3);
         $noticia = $this->noticiasModel->find($id);
         
         if($noticia && $noticia->active == 0){
-            $update = $this->noticiasModel->update($id, ['active' => 1]); 
+            $update = $this->noticiasModel->update($id, ['active' => 1]);
+            echo json_encode([
+                'class' => 'btn-processing',
+                'content' => '<svg><use href="#checkbox" /></svg> Aprovar'
+            ]);
         } elseif($noticia && $noticia->active == 1){
-            $update = $this->noticiasModel->update($id, ['active' => 0]);            
+            $update = $this->noticiasModel->update($id, ['active' => 0]);
+            echo json_encode([
+                'class' => 'btn-success',
+                'content' => '<svg><use href="#checkbox" /></svg> Aprovado'
+            ]);
         }
     }
     
