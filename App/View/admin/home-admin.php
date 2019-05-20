@@ -27,7 +27,7 @@ include 'header-admin.php';
                                 <?php } else { ?>
                                 <a href="/admin/<?php echo $noticia->id ?>/ativar" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                                 <?php } ?>
-                                <a href="#" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
+                                <a href="/admin/<?php echo $noticia->id ?>/delete" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                             </div>
                         </div>
                     </article>
