@@ -182,5 +182,34 @@ jQuery.noConflict();
             return false;
         }
     });
+    
+    //Toggle Status =============
+    var $btn = $('.btn-status');
+    
+    $btn.on('click', function(event){
+        event.preventDefault();
+        var $idNoticia = $(this).data('id');
+        var $btnAtual = $(this);
+        var $tamanho = $btnAtual.width();
+        
+        $.ajax({
+            url: '/admin/' + $idNoticia + '/change-status',
+            type: 'POST',
+            data: {id: $idNoticia},
+            beforeSend: function(){
+                if ( $btnAtual.hasClass('btn-success') ) {
+                    $btnAtual.removeClass('btn-success').addClass('btn-processing');
+                }                
+                $btnAtual.width($tamanho).empty().html('<div class="text-center"><svg style="margin: 0; width: 24px; height: 24px;"><use href="#loader" /></svg></div>');
+            },
+            success: function(response){
+                var $obj = JSON.parse(response);
+                $btnAtual.removeClass('btn-success btn-processing').removeAttr('style').css('margin-right', '5px').addClass($obj.class).empty().html($obj.content);
+            },
+            error: function(){
+                $btnAtual.removeClass('btn-success btn-processing').removeAttr('style').css('margin-right', '5px').empty().html('<div class="btn-processing">Erro!</div>');
+            }
+        });
+    });
 
 })(jQuery);
