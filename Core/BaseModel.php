@@ -104,4 +104,20 @@ abstract class BaseModel
 
         return $response;
     }
+    
+    
+    public function update(int $id, array $setValues)
+    {
+        //Criando strings coluna = 'valor'
+        foreach( $setValues as $key => $value ){
+            $campos[] = "`$key` = '$value'";
+        }
+        //UPDATE news SET `active` = 0, `title` = 'Título alterado', `slug` = 'lorem-ipsum-sit-amet' WHERE id = :id
+        $query = 'UPDATE ' . $this->table . ' SET ' . implode(', ', $campos) . ' WHERE id = :id';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(':id', $id);
+        $response = $stmt->execute();
+        $stmt->closeCursor();
+        return $response;
+    }
 }
