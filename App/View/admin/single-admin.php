@@ -37,9 +37,9 @@ include 'header-admin.php';
                             <?php if ($page->active) { ?>                                
                                 <a href="#" id="aprovado" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
                             <?php } else { ?>
-                                <a href="#" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
+                                <a href="/admin/<?php echo $page->id ?>/ativar" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                             <?php } ?>
-                            <a href="/admin/<?php echo $page->id ?>/ativar" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
+                            <a href="/admin/<?php echo $page->id ?>/delete" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                         </div>
                     </div>                    
                 </div>
