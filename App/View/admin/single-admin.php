@@ -34,10 +34,10 @@ include 'header-admin.php';
                             <li><svg><use href="#clock" /></svg> <?php echo date('d/m/Y', strtotime($page->created_at)); ?></li>
                         </ul>
                         <div class="mt-20">
-                            <?php if ($page->active) { ?>                                
-                                <a href="/admin/<?php echo $page->id ?>/change-status" id="aprovado" class="btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
+                            <?php if($page->active){ ?>                                
+                            <a href="#" data-id="<?php echo $page->id ?>" class="btn-status btn-processing" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovado</a>
                             <?php } else { ?>
-                                <a href="/admin/<?php echo $page->id ?>/change-status" id="aprovar" class="btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
+                            <a href="#" data-id="<?php echo $page->id ?>" class="btn-status btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                             <?php } ?>
                             <a href="/admin/<?php echo $page->id ?>/delete" class="btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                         </div>
