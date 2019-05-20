@@ -60,8 +60,8 @@ abstract class BaseModel
     public function find($id)
     {
         $query = 'SELECT * FROM ' . $this->table . ' WHERE id = :id';
-        $stmt->bindValue(':id', $id);
         $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(':id', $id);
         $stmt->execute();
         $response = $stmt->fetch();
         $stmt->closeCursor();
