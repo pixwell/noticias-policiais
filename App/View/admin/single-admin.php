@@ -14,7 +14,7 @@ include 'header-admin.php';
                         <div class="category">
                             <a href="/cidade/<?php echo $categoryList[$page->categories_id]['slug'] ?>"><?php echo $categoryList[$page->categories_id]['title'] ?></a>
                         </div>
-                        <div class="date"><?php echo date( 'd/m/Y' , strtotime( $page->created_at ) ); ?></div>
+                        <div class="date"><?php echo date( 'd/m/Y' , strtotime( $page->created_at ) ); ?></div>                        
                     </div>
                     <div class="text">
                         <h2><?php echo $page->title ?></h2>
@@ -43,6 +43,7 @@ include 'header-admin.php';
                         </div>
                     </div>                    
                 </div>
+                <div class="widget mb-30"><a href="/admin"><svg width="22" height="22"><use href="#home" /></svg> Voltar para a Home</a></div>
             </aside><!-- /Sidebar  -->
         </div>
         <?php } ?>
