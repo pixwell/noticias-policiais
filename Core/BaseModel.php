@@ -120,4 +120,15 @@ abstract class BaseModel
         $stmt->closeCursor();
         return $response;
     }
+    
+    public function delete($id)
+    {
+        //DELETE FROM `news` WHERE id=1
+        $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(':id', $id);
+        $response = $stmt->execute();
+        $stmt->closeCursor();
+        return $response;
+    }
 }
