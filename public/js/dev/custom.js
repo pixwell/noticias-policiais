@@ -184,9 +184,9 @@ jQuery.noConflict();
     });
     
     //Toggle Status =============
-    var $btn = $('.btn-status');
+    var $btnStatus = $('.btn-status');
     
-    $btn.on('click', function(event){
+    $btnStatus.on('click', function(event){
         event.preventDefault();
         var $idNoticia = $(this).data('id');
         var $btnAtual = $(this);
@@ -210,6 +210,55 @@ jQuery.noConflict();
                 $btnAtual.removeClass('btn-success btn-processing').removeAttr('style').css('margin-right', '5px').empty().html('<div class="btn-processing">Erro!</div>');
             }
         });
+    });
+    
+    //Delete noticia =============
+    var $btnDelete = $('.btn-delete');
+    var $modalDelete = $('#confirm-delete');
+    var $linkDelete = $('#confirm-delete #btn-delete');
+    var $openModal = $('.open-modal');
+    var $duration = 500;
+    
+    //Ao clicar no botao delete, abrir modal com os dados da ocorrencia
+    $openModal.on('click', function(event){
+        event.preventDefault();
+        var $idNoticia = $(this).data('id');
+        
+        $linkDelete.removeAttr('data-id').attr('data-id', $idNoticia);
+        $modalDelete.modal({fadeDuration: $duration});
+    });
+    
+    //Ao clicar no botao de confirmacao
+    $linkDelete.click(function(event){
+        event.preventDefault();
+        
+        var $idNoticia = $(this).attr('data-id');
+        var $liContainer = $('#item-' + $idNoticia);
+        var $contentBtnDelete = $linkDelete.html();
+        
+        $.ajax({
+            url: '/admin/' + $idNoticia + '/delete',
+            type: 'POST',
+            data: {id: $idNoticia},
+            beforeSend: function(){
+                $linkDelete.empty().html('<svg style="margin: 0; width: 16px; height: 16px;"><use href="#loader" /></svg>');
+            },
+            success: function(response){
+                $.modal.close();
+                //Aguarda o tempo de fechamento do modal
+                setTimeout(function(){
+                    $liContainer.css('background', '#ffe0e0').slideUp($duration);
+                    $linkDelete.empty().html($contentBtnDelete);
+                }, $duration);
+            },
+            error: function(){
+                $.modal.close();
+                setTimeout(function(){
+                    alert('Erro ao deletar notícia!');
+                }, $duration);
+            }
+        });
+        
     });
 
 })(jQuery);
