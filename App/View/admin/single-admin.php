@@ -3,6 +3,13 @@ get_head($metaTitle);
 include 'header-admin.php';
 ?>
 
+<div id="confirm-delete" class="modal">
+  <h3>Tem certeza que deseja deletar?</h3>
+  <h4 id="titulo" class="mb-20"></h4>
+  <a href="#" rel="modal:close" class="btn-processing">Cancelar</a>
+  <a href="#" id="btn-delete" class="btn-fail">Excluir</a>
+</div>
+
 <main>
     <div class="container pt-50 pb-30">
 
@@ -39,7 +46,7 @@ include 'header-admin.php';
                             <?php } else { ?>
                             <a href="#" data-id="<?php echo $page->id ?>" class="btn-status btn-success" style="margin-right: 5px"><svg><use href="#checkbox" /></svg> Aprovar</a>
                             <?php } ?>
-                            <a href="#" data-id="<?php echo $page->id ?>" class="btn-delete btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
+                            <a href="#" data-id="<?php echo $page->id ?>" data-home="false" class="open-modal btn-fail"><svg><use href="#trash" /></svg> Deletar</a>
                         </div>
                     </div>                    
                 </div>
