@@ -76,6 +76,6 @@ class AdminController extends BaseController
     }
     
     public function delete($id){
-        echo "ID $id deletado";
+        return $this->noticiasModel->delete($id);
     }
 }
