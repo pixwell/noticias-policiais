@@ -2,7 +2,7 @@
 <!-- ========== Cabecalho ========== -->
 <header id="header">
     <div class="container">
-        <h1><a href="/">Admin</a></h1>
+        <h1><a href="/admin">Admin</a></h1>
 
         <div id="toggle-menu">
             <a href="#"><svg><use href="#menu" /></svg></a>
