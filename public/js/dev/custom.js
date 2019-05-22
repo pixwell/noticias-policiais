@@ -11,10 +11,10 @@ jQuery.noConflict();
 
     //Form ocorrencias =============
     var $formRegistro = $('#form-registro');
-    var $nome = $('#nome-ocorrencia');
-    var $cidade = $('#cidade-ocorrencia');
-    var $titulo = $('#titulo-ocorrencia');
-    var $texto = $('#texto-ocorrencia');
+    var $nome = $('#nome');
+    var $cidade = $('#cidade');
+    var $titulo = $('#titulo');
+    var $texto = $('#texto');
     var $statusOcorrencia = $('#status-envio-ocorrencia');
 
     function alerta($campo, $mensagem){            
@@ -27,14 +27,14 @@ jQuery.noConflict();
 
     $formRegistro.submit(function(event){
         event.preventDefault();
-
+        
         var $campos = {
             author: $nome.val(),
             categories_id: $cidade.val(),
             title: $titulo.val(),
             content: $texto.val()
         };
-
+        
         //Validacoes ==================
         if( !$campos.author ){
             alerta($nome, 'Insira seu nome.');
