@@ -7,6 +7,7 @@
     <title><?php echo isset($metaTitle) ? $metaTitle : 'Noticias' ?></title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
     <link rel="shortcut icon" href="<?php echo ASSETS ?>/images/favicon.png">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="<?php echo ASSETS ?>/css/style.css">
     <style>
         .box1{background: #c4e6ff}
