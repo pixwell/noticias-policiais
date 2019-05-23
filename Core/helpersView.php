@@ -29,11 +29,6 @@ function user_id(){
     $user = new \Core\Auth;
     return $user->id();
 }
-//PAGINACAO ==================================
-function paginationLinks(){
-    $pagination = new \Core\Pagination;
-    return $pagination->paginationLinks();
-}
 
 /**
 * Inclusao do codigo no header da view
