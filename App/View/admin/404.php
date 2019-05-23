@@ -1,6 +1,6 @@
 <?php 
 get_head();
-include 'header.php';
+include 'header-admin.php';
 ?>
 
 <main>
