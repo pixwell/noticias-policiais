@@ -9,7 +9,7 @@ function limita_texto($texto, $numChar = 40, $dot = true, $echo = true){
         return $resumo;
     }    
 }
-
+//USER ==================================
 function auth_check(){
     $user = new \Core\Auth;
     return $user->check();
@@ -28,6 +28,11 @@ function user_login(){
 function user_id(){
     $user = new \Core\Auth;
     return $user->id();
+}
+//PAGINACAO ==================================
+function paginationLinks(){
+    $pagination = new \Core\Pagination;
+    return $pagination->paginationLinks();
 }
 
 /**
