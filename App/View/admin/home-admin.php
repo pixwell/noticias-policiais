@@ -12,11 +12,6 @@ include 'header-admin.php';
 
 <main>
     <div class="container pt-50 pb-30">        
-        <div class="mb-20">
-            <p>Paginação:</p>
-            <?php paginationLinks() ?>
-        </div>
-        
         <?php if ($noticias) : ?>
             <!-- Lista de noticias  -->
             <ul class="lista-noticias-admin">
