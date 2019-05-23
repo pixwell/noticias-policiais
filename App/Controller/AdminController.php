@@ -15,6 +15,7 @@ class AdminController extends BaseController
     private $noticiasModel;
     private $modelCategory;
     private $pagination;
+    private $numberPages = 5;
 
 
     public function __construct() {
@@ -41,11 +42,11 @@ class AdminController extends BaseController
     public function index($request)
     {
         $metaTitle = 'Home Administração';
-        $noticias = $this->noticiasModel->all('created_at DESC');
+        $currentPage = isset($request->get->page) ? $request->get->page : 1;
+        $noticias = $this->noticiasModel->all('created_at DESC', "$currentPage, $this->numberPages");
         $categoryList = $this->categoryList();
-        $currentPage = $request->get->page;
-        //$paginatingNews = $this->pagination->setTotalRecords( count($noticias) );
-        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList'));
+        $navPaginacao = $this->pagination->setCurrentPage($currentPage)->setPostPerPage($this->numberPages)->paginationLinks();
+        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList', 'navPaginacao'));
     }
     
     /**
