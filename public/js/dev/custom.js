@@ -233,8 +233,10 @@ jQuery.noConflict();
         event.preventDefault();
         
         var $idNoticia = $(this).attr('data-id');
+        var $isHome = $(this).attr('data-home');
         var $liContainer = $('#item-' + $idNoticia);
         var $contentBtnDelete = $linkDelete.html();
+        var $redirectTo = '/admin';
         
         $.ajax({
             url: '/admin/' + $idNoticia + '/delete',
@@ -247,8 +249,12 @@ jQuery.noConflict();
                 $.modal.close();
                 //Aguarda o tempo de fechamento do modal
                 setTimeout(function(){
-                    $liContainer.css('background', '#ffe0e0').slideUp($duration);
-                    $linkDelete.empty().html($contentBtnDelete);
+                    if($isHome === 'true'){
+                        $liContainer.css('background', '#ffe0e0').slideUp($duration);
+                        $linkDelete.empty().html($contentBtnDelete);
+                    } else {
+                        window.location.href = $redirectTo;
+                    }
                 }, $duration);
             },
             error: function(){
