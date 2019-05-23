@@ -5,6 +5,7 @@ use Core\BaseController;
 use App\Model\Category;
 use App\Model\Noticia;
 use Ausi\SlugGenerator\SlugGenerator;
+use Core\Container;
 
 class NoticiaController extends BaseController
 {
@@ -49,13 +50,16 @@ class NoticiaController extends BaseController
     public function show($slug)
     {
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];
-        $query = ['slug', $slug];
-        
+        $query = ['slug', $slug];        
         $noticia = $this->modelNoticia->findWhere($query);
-        $metaTitle = $noticia[0]->title;
-        $categoryList = $this->categoryList();
         
-        echo $this->view( 'site/single', compact('metaTitle', 'noticia', 'categoryList') );
+        if($noticia){
+            $metaTitle = $noticia[0]->title;
+            $categoryList = $this->categoryList();
+            echo $this->view( 'site/single', compact('metaTitle', 'noticia', 'categoryList') );
+        } else {
+            Container::pageNotFound();
+        }
     }
     
     /**
