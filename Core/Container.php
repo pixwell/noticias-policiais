@@ -23,25 +23,20 @@ class Container
         
     }
     
-    public static function pageNotFound()
+    public static function pageNotFound($isAdmin = false)
     {
-        $file = __DIR__ . '/../App/View/site/404.php';
-        http_response_code(404);
-        if ( file_exists($file) ) {
-            include_once $file;
+        if($isAdmin){
+           $file = __DIR__ . '/../App/View/admin/404.php'; 
         } else {
-            throw new \Exception('Arquivo View/site/404.php não existe');
+            $file = __DIR__ . '/../App/View/site/404.php'; 
         }
-    }
-    
-    public static function pageNotFoundAdmin()
-    {
-        $file = __DIR__ . '/../App/View/admin/404.php';
+        
         http_response_code(404);
         if ( file_exists($file) ) {
+            include __DIR__ . '/helpersView.php';
             include_once $file;
         } else {
-            throw new \Exception('Arquivo View/admin/404.php não existe');
+            throw new \Exception('Arquivo View 404.php não existe');
         }
     }
     
