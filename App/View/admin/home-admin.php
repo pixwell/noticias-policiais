@@ -12,6 +12,14 @@ include 'header-admin.php';
 
 <main>
     <div class="container pt-50 pb-30">
+        <p>Página atual: <?php echo $currentPage ?></p>
+        <p>Total de notícias: <?php echo count($noticias) ?></p>
+        
+        <div class="mb-20">
+            <p>Paginação:</p>
+            <?php paginationLinks() ?>
+        </div>
+        
         <?php if ($noticias) : ?>
             <!-- Lista de noticias  -->
             <ul class="lista-noticias-admin">
