@@ -57,7 +57,7 @@ class AdminController extends BaseController
             $categoryList = $this->categoryList();
             echo $this->view( 'admin/single-admin', compact('metaTitle', 'noticia', 'categoryList') );            
         } else {
-            Container::pageNotFoundAdmin();
+            Container::pageNotFound(true);
         }        
     }
     
