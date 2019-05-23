@@ -11,7 +11,7 @@ include 'header-admin.php';
 </div>
 
 <main>
-    <div class="container pt-50 pb-30">        
+    <div class="container pt-50 pb-30">         
         <?php if ($noticias) : ?>
             <!-- Lista de noticias  -->
             <ul class="lista-noticias-admin">
@@ -40,7 +40,10 @@ include 'header-admin.php';
                     </article>
                 </li>  
             <?php endforeach; ?>
-            </ul><!-- /Lista de noticias  -->    
+            </ul><!-- /Lista de noticias  -->
+            
+            <nav><?php echo $navPaginacao ?></nav>
+            
         <?php else : ?>
             <p>Nenhuma notícia registrada ainda.</p>
         <?php endif; ?>
