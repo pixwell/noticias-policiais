@@ -7,16 +7,20 @@ use Core\Session;
 use App\Model\Noticia;
 use App\Model\Category;
 use Core\Container;
+use Core\Pagination;
 
 
 class AdminController extends BaseController
 {
     private $noticiasModel;
     private $modelCategory;
-    
+    private $pagination;
+
+
     public function __construct() {
         $this->noticiasModel = new Noticia;
         $this->modelCategory = new Category;
+        $this->pagination = new Pagination;
     }
     
     /**
@@ -40,7 +44,8 @@ class AdminController extends BaseController
         $noticias = $this->noticiasModel->all('created_at DESC');
         $categoryList = $this->categoryList();
         $currentPage = $request->get->page;
-        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList', 'currentPage'));
+        //$paginatingNews = $this->pagination->setTotalRecords( count($noticias) );
+        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList'));
     }
     
     /**
