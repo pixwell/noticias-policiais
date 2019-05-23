@@ -11,10 +11,7 @@ include 'header-admin.php';
 </div>
 
 <main>
-    <div class="container pt-50 pb-30">
-        <p>Página atual: <?php echo $currentPage ?></p>
-        <p>Total de notícias: <?php echo count($noticias) ?></p>
-        
+    <div class="container pt-50 pb-30">        
         <div class="mb-20">
             <p>Paginação:</p>
             <?php paginationLinks() ?>
