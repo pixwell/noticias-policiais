@@ -34,12 +34,13 @@ class AdminController extends BaseController
         return $newList;
     }
     
-    public function index()
+    public function index($request)
     {
         $metaTitle = 'Home Administração';
         $noticias = $this->noticiasModel->all('created_at DESC');
         $categoryList = $this->categoryList();
-        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList'));
+        $currentPage = $request->get->page;
+        echo $this->view('admin/home-admin', compact('metaTitle', 'noticias', 'categoryList', 'currentPage'));
     }
     
     /**
