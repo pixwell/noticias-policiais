@@ -6,6 +6,7 @@ use Core\BaseController;
 use Core\Session;
 use App\Model\Noticia;
 use App\Model\Category;
+use Core\Container;
 
 
 class AdminController extends BaseController
@@ -48,13 +49,16 @@ class AdminController extends BaseController
     public function show($slug)
     {
         //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];
-        $query = ['slug', $slug];
+        $query = ['slug', $slug];        
+        $noticia = $this->noticiasModel->findWhere($query);       
         
-        $noticia = $this->noticiasModel->findWhere($query);
-        $metaTitle = $noticia[0]->title;
-        $categoryList = $this->categoryList();
-        
-        echo $this->view( 'admin/single-admin', compact('metaTitle', 'noticia', 'categoryList') );
+        if($noticia){
+            $metaTitle = $noticia[0]->title;
+            $categoryList = $this->categoryList();
+            echo $this->view( 'admin/single-admin', compact('metaTitle', 'noticia', 'categoryList') );            
+        } else {
+            Container::pageNotFound();
+        }        
     }
     
     public function toggleActive($id){
