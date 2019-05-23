@@ -90,12 +90,24 @@ class NoticiaController extends BaseController
     public function store($request)
     {
         //campos do formulario
-        $campos = $request->post;
-        //Gerador de slug
-        $slugGenerator = new SlugGenerator;        
-        $campos->slug = $slugGenerator->generate( strtolower($campos->title) );
+        $campos = $request->post;                
         
         if( !empty($campos->author) && !empty($campos->categories_id) && !empty($campos->title) && !empty($campos->content)){
+            //Gerador de slug
+            $slugGenerator = new SlugGenerator;        
+            $campos->slug = $slugGenerator->generate( strtolower($campos->title) );
+            $slugExiste = $this->modelNoticia->findWhere(['slug', $campos->slug]);
+            $i = 0;
+            
+            if($slugExiste){
+                do {
+                    $i++;
+                    $novoSlug = $campos->slug . '-' . $i;
+                } while ( $this->modelNoticia->findWhere(['slug', $novoSlug]) );
+                
+                $campos->slug = $novoSlug;
+            } 
+            //Gravar no BD
             $gravar = $this->modelNoticia->insert($campos);
             if($gravar){
                 echo '<p class="status-success">Ocorrência enviada com sucesso!</p>';
