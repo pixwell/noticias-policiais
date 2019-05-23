@@ -222,8 +222,9 @@ jQuery.noConflict();
     $openModal.on('click', function(event){
         event.preventDefault();
         var $idNoticia = $(this).data('id');
+        var $isHome = $(this).data('home');
         
-        $linkDelete.removeAttr('data-id').attr('data-id', $idNoticia);
+        $linkDelete.removeAttr('data-id data-home').attr({'data-id': $idNoticia, 'data-home': $isHome});
         $modalDelete.modal({fadeDuration: $duration});
     });
     
