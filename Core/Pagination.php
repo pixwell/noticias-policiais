@@ -11,8 +11,8 @@ class Pagination
         return $this;
     }
     
-    public function setPostPerPage($postPerPage) {
-        $this->postPerPage = $postPerPage;
+    public function setPostPerPage($postPerPage = null) {
+        $this->postPerPage = $postPerPage ?: 5 ;
         return $this;
     }
     
