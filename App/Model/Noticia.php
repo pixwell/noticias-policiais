@@ -7,8 +7,4 @@ use Core\BaseModel;
 class Noticia extends BaseModel
 {
     protected $table = 'news';
-    
-    public function getTable() {
-        return $this->table;
-    }
 }
