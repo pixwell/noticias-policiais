@@ -27,18 +27,26 @@ class Pagination
     }
     
     public function limitStart()
-    {        
+    {
+        //Verificacao para o caso de o usuario inserir na URL um numero maior que o total de links
+        if( $this->currentPage > $this->totalPaginationLinks() ){
+            $this->currentPage = $this->totalPaginationLinks();
+        }
         return ($this->currentPage * $this->postPerPage) - $this->postPerPage;
+    }
+    
+    public function totalPaginationLinks()
+    {
+        return ceil($this->totalRecords / $this->postPerPage);
     }
         
     public function paginationLinks()
     {
-        $totalLinks = ceil($this->totalRecords / $this->postPerPage);
         $navHtml = '';
-        if( $totalLinks > 1){
+        if( $this->totalPaginationLinks() > 1){
             $navHtml = '<ul class="pagination">';
-            for ($i = 1; $i <= $totalLinks; $i++){
-                if( $this->currentPage == $i){
+            for ($i = 1; $i <= $this->totalPaginationLinks(); $i++){
+                if( $this->currentPage == $i ){
                     $class = 'page-item active';
                 } else {
                     $class = 'page-item';
