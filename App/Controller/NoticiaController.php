@@ -6,15 +6,20 @@ use App\Model\Category;
 use App\Model\Noticia;
 use Ausi\SlugGenerator\SlugGenerator;
 use Core\Container;
+use Core\Pagination;
 
 class NoticiaController extends BaseController
 {
     private $modelCategory;
     private $modelNoticia;
+    private $pagination;
+    private $settingsPagination;
 
     public function __construct(){
         $this->modelCategory = new Category;
         $this->modelNoticia = new Noticia;
+        $this->pagination = new Pagination;
+        $this->settingsPagination = $this->pagination->setPostPerPage(3);
     }
     
     /**
@@ -35,12 +40,18 @@ class NoticiaController extends BaseController
     /**
      * Noticias da Home organizadas por datas e filtradas por estado ativo
      */
-    public function index()
+    public function index($request)
     {
+        //Config Paginacao
+        $total = $this->modelNoticia->all();
+        $currentPage = isset($request->get->page) ? $request->get->page : 1;
+        $settingsPagination = $this->pagination->setCurrentPage($currentPage)->setTotalRecords(count($total));
+        $navPaginacao = $settingsPagination->paginationLinks();
+        //Noticias
         $metaTitle = 'Notícias Policiais';
-        $noticias = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC');
         $categoryList = $this->categoryList();
-        echo $this->view( 'site/home', compact('metaTitle', 'noticias', 'categoryList') );
+        $noticias = $this->modelNoticia->findWhere(['active', 1], 'created_at DESC', "{$settingsPagination->limitStart()}, {$settingsPagination->getPostPerPage()}");
+        echo $this->view( 'site/home', compact('metaTitle', 'noticias', 'categoryList', 'navPaginacao') );
     }
     
     /**
