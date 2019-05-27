@@ -12,13 +12,17 @@ O site deve conter notícias policiais no país. Também deve ter um local, no s
 COMO INSTALAR
 -------------
 1) Criar o banco de dados
+
 2) Importar o arquivo SQL com a estrutura de tabelas e os primeiros inserts
+
 3) Editar o arquivo database.php na pasta App/config para conexão com o banco de dados
 
 Credenciais de acesso
 ---------------------
 Área administrativa: endereco-do-site.com.br**/admin**
+
 Login: admin
+
 Senha: 123
 
 **Data:** 07/05/2019
