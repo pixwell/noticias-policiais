@@ -43,7 +43,7 @@ class NoticiaController extends BaseController
     public function index($request)
     {
         //Config Paginacao
-        $total = $this->modelNoticia->all();
+        $total = $this->modelNoticia->findWhere(['active', 1]);
         $currentPage = isset($request->get->page) ? $request->get->page : 1;
         $settingsPagination = $this->pagination->setCurrentPage($currentPage)->setTotalRecords(count($total));
         $navPaginacao = $settingsPagination->paginationLinks();
