@@ -19,7 +19,11 @@ COMO INSTALAR
 
 2) Importar o arquivo SQL com a estrutura de tabelas e os primeiros inserts
 
-3) Editar o arquivo database.php na pasta App/config para conexão com o banco de dados
+3) Subir o arquivo .zip com o site compactado para o servidor de hospedagem
+
+4) Descompactar os arquivos do site
+
+5) Editar o arquivo database.php na pasta App/config para conexão com o banco de dados
 
 Credenciais de acesso
 ---------------------
