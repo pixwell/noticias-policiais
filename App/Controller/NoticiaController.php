@@ -77,14 +77,21 @@ class NoticiaController extends BaseController
      * Exibe as categorias de noticias
      * @param string $slug
      */
-    public function category($slug)
+    public function category($slug, $request)
     {
-        //Padrao where: [0 => 'campo', 1 => 'valor', 2 => 'operador'];    
+        //Noticias
         $categoria = $this->modelCategory->findWhere(['slug', $slug]);
-        $noticias = $this->modelNoticia->findWhere( [['categories_id', $categoria[0]->id], ['active', 1]], 'created_at DESC' );
         $metaTitle = $categoria[0]->title;
+        $total = $this->modelNoticia->findWhere( [['categories_id', $categoria[0]->id], ['active', 1]]);
         
-        echo $this->view( 'site/category', compact('metaTitle', 'noticias', 'categoria') );
+        //Config Paginacao        
+        $currentPage = isset($request->get->page) ? $request->get->page : 1;
+        $settingsPagination = $this->pagination->setCurrentPage($currentPage)->setTotalRecords(count($total));
+        $navPaginacao = $settingsPagination->paginationLinks();
+        
+        $noticias = $this->modelNoticia->findWhere( [['categories_id', $categoria[0]->id], ['active', 1]], 'created_at DESC', "{$settingsPagination->limitStart()}, {$settingsPagination->getPostPerPage()}" );
+        
+        echo $this->view( 'site/category', compact('metaTitle', 'noticias', 'categoria', 'navPaginacao') );
     }
 
     /**
