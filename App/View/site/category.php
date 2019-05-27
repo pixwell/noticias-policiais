@@ -27,6 +27,9 @@ include 'header.php';
                     </li>
                     <?php } ?>                   
                 </ul><!-- /Lista de noticias  -->
+                
+                <nav><?php echo $navPaginacao ?></nav>
+                
             <?php } else { ?>
                 <p>Nenhuma notícias encontrada.</p>
             <?php }//if ?>   
