@@ -10,8 +10,10 @@ return [
     ['login', 'UserController', 'login'],
     ['logout', 'UserController', 'logout'],
     ['auth', 'UserController', 'auth'],
-    ['create-user', 'UserController', 'createUser'],
-    ['store-user', 'UserController', 'storeUser'],
+    
+    //Rotas para criacao de usuarios, elas nao estao protegidas por login e senha!
+    //['create-user', 'UserController', 'createUser'],
+    //['store-user', 'UserController', 'storeUser'],
     
     ['admin', 'AdminController', 'index', 'auth'],
     ['admin/{id}/change-status/', 'AdminController', 'toggleActive', 'auth'],
