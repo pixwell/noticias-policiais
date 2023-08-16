@@ -1,10 +1,6 @@
 Notícias Policiais (Trabalho acadêmico)
 =======================================
 
-**Data:** 07/05/2019
-
-**Cliente:** [Jeferson Saldanha](https://www.workana.com/e/ed8fead1197de7ce413f299b23e8c03f)
-
 DESCRIÇÃO
 ----------
 Sistema para registro de ocorrências informais, feito em PHP OO usando o design pattern MVC.
